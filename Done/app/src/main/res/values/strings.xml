@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Done</string>
+    <string name="priority_prompt">Choose priority level</string>
+
+    <string-array name="Priority">
+        <item>"A"</item>
+        <item>"B</item>
+        <item>"C"</item>
+        <item>"D"</item>
+    </string-array>
+</resources>
