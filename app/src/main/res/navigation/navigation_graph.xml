@@ -3,25 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/goalName">
+    app:startDestination="@+id/HomePage">
+
+    <fragment
+        android:id="@+id/HomePage"
+        android:name="com.example.android.done.HomePage"
+        android:label="fragment_HomePage"
+        tools:layout="@layout/fragment_home_page">
+
+        <action
+            android:id="@+id/action_HomePage_to_goalName"
+            app:destination="@id/goalName" />
+    </fragment>
     <fragment
         android:id="@+id/goalName"
         android:name="com.example.android.done.GoalName"
         android:label="fragment_goal_name"
-        tools:layout="@layout/fragment_goal_name" />
+        tools:layout="@layout/fragment_goal_name" >
+        <action
+            android:id="@+id/action_goalName_to_motivation"
+            app:destination="@id/motivation" />
+    </fragment>
     <fragment
         android:id="@+id/motivation"
         android:name="com.example.android.done.Motivation"
         android:label="fragment_motivation"
-        tools:layout="@layout/fragment_motivation" />
+        tools:layout="@layout/fragment_motivation">
+
+        <action
+            android:id="@+id/action_motivation_to_priority2"
+            app:destination="@id/priority" />
+    </fragment>
     <fragment
         android:id="@+id/priority"
         android:name="com.example.android.done.Priority"
         android:label="fragment_priority"
-        tools:layout="@layout/fragment_priority" />
+        tools:layout="@layout/fragment_priority">
+        <action
+            android:id="@+id/action_priority_to_deadline2"
+            app:destination="@id/deadline" />
+    </fragment>
     <fragment
         android:id="@+id/deadline"
         android:name="com.example.android.done.Deadline"
         android:label="fragment_deadline"
         tools:layout="@layout/fragment_deadline" />
+
+
 </navigation>
