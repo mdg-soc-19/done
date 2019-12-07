@@ -14,12 +14,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link priority.OnFragmentInteractionListener} interface
+ * {@link Deadline.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link priority#newInstance} factory method to
+ * Use the {@link Deadline#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class priority extends Fragment {
+public class Deadline extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +31,7 @@ public class priority extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public priority() {
+    public Deadline() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class priority extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment priority.
+     * @return A new instance of fragment Deadline.
      */
     // TODO: Rename and change types and number of parameters
-    public static priority newInstance(String param1, String param2) {
-        priority fragment = new priority();
+    public static Deadline newInstance(String param1, String param2) {
+        Deadline fragment = new Deadline();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,7 +66,7 @@ public class priority extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_priority, container, false);
+        return inflater.inflate(R.layout.fragment_deadline, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
