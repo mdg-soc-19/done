@@ -29,10 +29,8 @@ public class Randomize extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_randomize, container, false);
 
-        String [] values =
-                {"1","2","3","4","5","6","7"};
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner1);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, values);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, R.array.daysCount);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
 

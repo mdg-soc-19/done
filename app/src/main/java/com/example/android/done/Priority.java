@@ -70,10 +70,8 @@ public class Priority extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_priority, container, false);
 
-        String [] values =
-                {"A","B","C","D"};
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner1);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, values);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item,R.array.Priority);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
 

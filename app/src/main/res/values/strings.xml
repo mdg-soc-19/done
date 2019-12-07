@@ -11,6 +11,17 @@
         <item>"D"</item>
     </string-array>
 
+    <string-array name="daysCount">
+        <item>"1"</item>
+        <item>"2</item>
+        <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+        <item>"6"</item>
+        <item>"7"</item>
+
+    </string-array>
+
     <string name="motivationText">
         To make sure that your goal is motivating, write down why it\'s valuable and important to you.
         Ask yourself, \"If I were to share my goal with others, what would I tell them to convince them it was a worthwhile goal?\"
