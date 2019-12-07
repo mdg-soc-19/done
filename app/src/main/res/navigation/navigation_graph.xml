@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation_graph">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/goalName">
+    <fragment
+        android:id="@+id/goalName"
+        android:name="com.example.android.done.goalName"
+        android:label="fragment_goal_name"
+        tools:layout="@layout/fragment_goal_name" />
+    <fragment
+        android:id="@+id/motivation"
+        android:name="com.example.android.done.motivation"
+        android:label="fragment_motivation"
+        tools:layout="@layout/fragment_motivation" />
+    <fragment
+        android:id="@+id/priority"
+        android:name="com.example.android.done.priority"
+        android:label="fragment_priority"
+        tools:layout="@layout/fragment_priority" />
+    <fragment
+        android:id="@+id/deadline"
+        android:name="com.example.android.done.deadline"
+        android:label="fragment_deadline"
+        tools:layout="@layout/fragment_deadline" />
 </navigation>
