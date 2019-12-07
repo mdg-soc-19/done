@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 /**
@@ -66,7 +68,16 @@ public class Priority extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_priority, container, false);
+        View v = inflater.inflate(R.layout.fragment_priority, container, false);
+
+        String [] values =
+                {"A","B","C","D"};
+        Spinner spinner = (Spinner) v.findViewById(R.id.spinner1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, values);
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        spinner.setAdapter(adapter);
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

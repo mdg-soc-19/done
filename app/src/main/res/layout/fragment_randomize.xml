@@ -6,30 +6,22 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Motivation">
-
+    tools:context=".Randomize">
 
     <TextView
-        android:id="@+id/motivation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Motivation"
-        android:textAllCaps="true" />
+        android:text="Select number of days to work in a week"/>
 
-    <EditText
+
+    <Spinner
+        android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:entries="@array/Priority"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:id="@+id/next"
-        />
+        android:prompt="@string/priority_prompt" />
 
 
 </LinearLayout>

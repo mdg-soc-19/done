@@ -47,7 +47,36 @@
         android:id="@+id/deadline"
         android:name="com.example.android.done.Deadline"
         android:label="fragment_deadline"
-        tools:layout="@layout/fragment_deadline" />
+        tools:layout="@layout/fragment_deadline" >
+        <action
+            android:id="@+id/action_deadline_to_SetFrequency"
+            app:destination="@id/SetFrequency" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SetFrequency"
+        android:name="com.example.android.done.SetFrequency"
+        android:label="fragment_set_frequency"
+        tools:layout="@layout/fragment_set_frequency" >
+        <action
+            android:id="@+id/action_SetFrequency_to_randomize"
+            app:destination="@id/randomize" />
+        <action
+            android:id="@+id/action_SetFrequency_to_customize"
+            app:destination="@id/customize" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/randomize"
+        android:name="com.example.android.done.Randomize"
+        android:label="fragment_randomize"
+        tools:layout="@layout/fragment_randomize" />
+
+    <fragment
+        android:id="@+id/customize"
+        android:name="com.example.android.done.Customize"
+        android:label="fragment_customize"
+        tools:layout="@layout/fragment_customize" />
 
 
 </navigation>
