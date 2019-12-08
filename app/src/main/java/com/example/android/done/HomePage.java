@@ -32,15 +32,6 @@ public class HomePage extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        navController = Navigation.findNavController(view);
-        TextView newGoal = (TextView) view.findViewById(R.id.new_goal);
-        newGoal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_HomePage_to_goalName);
-            }
-        });
-
 
     }
 }
