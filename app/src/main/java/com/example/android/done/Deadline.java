@@ -14,10 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.Toast;
 
 
 public class Deadline extends Fragment {
     NavController navController;
+    CalendarView calendarView;
 
 
     @Override
@@ -29,7 +32,17 @@ public class Deadline extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_deadline, container, false);
+        View v = inflater.inflate(R.layout.fragment_deadline, container, false);
+        calendarView = (CalendarView) v.findViewById(R.id.calendar_view);
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                String deadline = dayOfMonth + "/" + month + "/" + year;
+                Toast.makeText(getContext(), "Deadline: "+deadline , Toast.LENGTH_SHORT).show();
+            }
+        });
+        return v;
+
     }
 
     @Override
@@ -44,6 +57,8 @@ public class Deadline extends Fragment {
                 navController.navigate(R.id.action_deadline_to_SetFrequency);
             }
         });
+
+
 
     }
 }

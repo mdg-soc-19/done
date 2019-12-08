@@ -13,15 +13,18 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_gravity="center"
+
     >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Deadline"
+        android:textAllCaps="true"
         />
 
     <CalendarView
+        android:id="@+id/calendar_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

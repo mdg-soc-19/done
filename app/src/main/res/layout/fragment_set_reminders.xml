@@ -10,19 +10,25 @@
 
 
     <TextView
-        android:id="@+id/motivation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Motivation"
+        android:text="Reminders"
         android:textAllCaps="true" />
 
-    <EditText
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
+        android:text="How much time before the task should we remind you "
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Time"
+        android:id="@+id/before_button"
+        />
+
+
 
 
 
