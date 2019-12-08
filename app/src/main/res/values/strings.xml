@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Done</string>
     <string name="priority_prompt">Choose priority level</string>
+    <string name="frequency_prompt">Choose frequency of days</string>
 
     <string-array name="Priority">
         <item>"A"</item>

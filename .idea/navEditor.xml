@@ -40,12 +40,29 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_SetFrequency_to_customize">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_SetFrequency_to_randomize">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="SetReminders">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1611" />
+                            <option name="y" value="-169" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

@@ -70,13 +70,27 @@
         android:id="@+id/randomize"
         android:name="com.example.android.done.Randomize"
         android:label="fragment_randomize"
-        tools:layout="@layout/fragment_randomize" />
+        tools:layout="@layout/fragment_randomize" >
+        <action
+            android:id="@+id/action_randomize_to_SetReminders"
+            app:destination="@id/SetReminders" />
+    </fragment>
 
     <fragment
         android:id="@+id/customize"
         android:name="com.example.android.done.Customize"
         android:label="fragment_customize"
-        tools:layout="@layout/fragment_customize" />
+        tools:layout="@layout/fragment_customize" >
+        <action
+            android:id="@+id/action_customize_to_SetReminders"
+            app:destination="@id/SetReminders" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SetReminders"
+        android:name="com.example.android.done.SetReminders"
+        android:label="fragment_set_reminders"
+        tools:layout="@layout/fragment_set_reminders" />
 
 
 </navigation>

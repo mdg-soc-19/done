@@ -10,7 +10,6 @@
 
 
     <TextView
-        android:id="@+id/goal_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -18,11 +17,10 @@
         android:textAllCaps="true" />
 
     <TextView
-        android:id="@+id/goal_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Frequency"
+        android:text="Set no. of days to work in a week"
         android:textAllCaps="true" />
 
 
