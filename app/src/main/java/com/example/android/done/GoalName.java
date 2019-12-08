@@ -10,11 +10,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class GoalName extends Fragment {
@@ -40,11 +43,18 @@ public class GoalName extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
+        final EditText goal_name = (EditText) view.findViewById(R.id.goal_name_edit_text);
         Button next = (Button) view.findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_goalName_to_motivation);
+                if (TextUtils.isEmpty(goal_name.getText())) {
+
+                    Toast.makeText(getContext(),"Please enter your goal name" , Toast.LENGTH_SHORT).show();
+
+                } else {
+                    navController.navigate(R.id.action_goalName_to_motivation);
+                }
             }
         });
     }

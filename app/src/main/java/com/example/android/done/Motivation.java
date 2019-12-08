@@ -10,10 +10,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class Motivation extends Fragment {
@@ -37,10 +40,17 @@ public class Motivation extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
         Button next = (Button) view.findViewById(R.id.next);
+        final EditText motivation = (EditText) view.findViewById(R.id.motivation_edit_text);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_motivation_to_priority2);
+                if(TextUtils.isEmpty(motivation.getText()))
+                {
+                    Toast.makeText(getContext(),"Please enter your motivation" , Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    navController.navigate(R.id.action_motivation_to_priority2);
+                }
             }
         });
     }

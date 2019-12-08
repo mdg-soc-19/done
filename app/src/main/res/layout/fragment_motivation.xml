@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
+        android:id="@+id/motivation_edit_text"
         />
 
     <Button
