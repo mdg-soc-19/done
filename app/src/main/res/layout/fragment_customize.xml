@@ -21,38 +21,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Monday"
+        android:id="@+id/monday"
         />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tuesday"
+        android:id="@+id/tuesday"
         />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wednesday" />
+        android:text="Wednesday"
+        android:id="@+id/wednesday"/>
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thursday"/>
+        android:text="Thursday"
+        android:id="@+id/thursday"/>
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Friday"/>
+        android:text="Friday"
+        android:id="@+id/friday"/>
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Saturday"/>
+        android:text="Saturday"
+        android:id="@+id/saturday"/>
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sunday"/>
+        android:text="Sunday"
+        android:id="@+id/sunday"
+        />
 
 
 
