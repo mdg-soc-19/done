@@ -13,20 +13,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Reminders"
+        android:text="Reminder"
         android:textAllCaps="true" />
 
     <TextView
+        android:layout_margin="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How much time before the task should we remind you "
+        android:text="At what time should we remind you about the task? "
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Set Time"
         android:id="@+id/before_button"
+        android:layout_marginBottom="16dp"
         />
+
+
+
+
+
+
+
+
+
+
+
 
 
 
