@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
-@Entity
+@Entity (tableName = "goal_table")
 public class Goal {
 
     @PrimaryKey(autoGenerate = true)
@@ -104,7 +104,7 @@ public class Goal {
         return customize;
     }
 
-    public void setCustomze(ArrayList<String> customze) {
-        this.customize = customze;
+    public void setCustomze(ArrayList<String> customize) {
+        this.customize = customize;
     }
 }
