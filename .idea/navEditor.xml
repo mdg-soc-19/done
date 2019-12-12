@@ -19,12 +19,29 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_HomePage_to_MyGoalsHome">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_HomePage_to_goalName">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="MyGoalsHome">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-83" />
+                            <option name="y" value="286" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -63,6 +80,15 @@
                             <option name="x" value="1611" />
                             <option name="y" value="-169" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_SetReminders_to_MyGoalsHome">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
