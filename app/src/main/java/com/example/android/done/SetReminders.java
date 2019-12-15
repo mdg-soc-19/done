@@ -36,17 +36,5 @@ public class SetReminders extends Fragment {
 
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        navController = Navigation.findNavController(view);
-        Button save = (Button) view.findViewById(R.id.save_button);
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                    navController.navigate(R.id.action_SetReminders_to_MyGoalsHome);
-            }
-        });
-    }
 }

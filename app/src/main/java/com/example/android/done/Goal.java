@@ -23,10 +23,6 @@ public class Goal {
 
     private int minute;
 
-    private String randomize;
-
-    private CustomizeConverter  customize;
-
     public Goal(String goalName, String motivation, String priority, Long deadline, int hour, int minute) {
         this.goalName = goalName;
         this.motivation = motivation;
@@ -92,19 +88,5 @@ public class Goal {
         this.minute = minute;
     }
 
-    public String getRandomize() {
-        return randomize;
-    }
 
-    public void setRandomize(String randomize) {
-        this.randomize = randomize;
-    }
-
-    public CustomizeConverter getCustomize() {
-        return customize;
-    }
-
-    public void setCustomize(CustomizeConverter customize) {
-        this.customize = customize;
-    }
 }
