@@ -19,21 +19,21 @@ public class Goal {
 
     private Long deadline;
 
-    private int rHour;
+    private int hour;
 
-    private int rMinute;
+    private int minute;
 
     private String randomize;
 
-    private ArrayList<String> customize;
+    private String[]  customize;
 
-    public Goal(String goalName, String motivation, String priority, Long deadline, int rHour, int rMinute) {
+    public Goal(String goalName, String motivation, String priority, Long deadline, int hour, int minute) {
         this.goalName = goalName;
         this.motivation = motivation;
         this.priority = priority;
         this.deadline = deadline;
-        this.rHour = rHour;
-        this.rMinute = rMinute;
+        this.hour = hour;
+        this.minute = minute;
     }
 
     public int getId() {
@@ -76,20 +76,20 @@ public class Goal {
         this.deadline = deadline;
     }
 
-    public int getrHour() {
-        return rHour;
+    public int getHour() {
+        return hour;
     }
 
-    public void setrHour(int rHour) {
-        this.rHour = rHour;
+    public void setHour(int hour) {
+        this.hour = hour;
     }
 
-    public int getrMinute() {
-        return rMinute;
+    public int getMinute() {
+        return minute;
     }
 
-    public void setrMinute(int rMinute) {
-        this.rMinute = rMinute;
+    public void setMinute(int minute) {
+        this.minute = minute;
     }
 
     public String getRandomize() {
@@ -100,11 +100,11 @@ public class Goal {
         this.randomize = randomize;
     }
 
-    public ArrayList<String> getCustomze() {
+    public String[] getCustomze() {
         return customize;
     }
 
-    public void setCustomze(ArrayList<String> customize) {
+    public void setCustomze(String[] customize) {
         this.customize = customize;
     }
 }
