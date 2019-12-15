@@ -39,7 +39,7 @@ NavController navController;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
-        Button next = (Button) view.findViewById(R.id.next);
+        Button next = (Button) view.findViewById(R.id.random_next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

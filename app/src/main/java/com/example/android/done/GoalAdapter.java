@@ -17,7 +17,13 @@ import java.util.List;
 
 public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
 
+
+    private int itemLayout;
     private List<Goal> goals = new ArrayList<>();
+
+    public GoalAdapter(int layoutId) {
+        itemLayout = layoutId;
+    }
 
     @NonNull
     @Override
