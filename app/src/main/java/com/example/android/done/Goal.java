@@ -25,7 +25,7 @@ public class Goal {
 
     private String randomize;
 
-    private String[]  customize;
+    private CustomizeConverter  customize;
 
     public Goal(String goalName, String motivation, String priority, Long deadline, int hour, int minute) {
         this.goalName = goalName;
@@ -100,11 +100,11 @@ public class Goal {
         this.randomize = randomize;
     }
 
-    public String[] getCustomze() {
+    public CustomizeConverter getCustomize() {
         return customize;
     }
 
-    public void setCustomze(String[] customize) {
+    public void setCustomize(CustomizeConverter customize) {
         this.customize = customize;
     }
 }

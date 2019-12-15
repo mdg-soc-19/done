@@ -22,7 +22,6 @@ public class MyGoalsHome extends Fragment {
     private Spinner priority;
     private CalendarView deadline;
     private TimePicker reminder;
-    private
 
 
     @Override
