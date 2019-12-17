@@ -39,35 +39,9 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-83" />
-                            <option name="y" value="286" />
+                            <option name="x" value="-62" />
+                            <option name="y" value="370" />
                           </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="SetFrequency">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="943" />
-                            <option name="y" value="-88" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_SetFrequency_to_customize">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_SetFrequency_to_randomize">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -77,8 +51,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="1611" />
-                            <option name="y" value="-169" />
+                            <option name="x" value="1355" />
+                            <option name="y" value="-131" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -98,8 +72,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="1278" />
-                            <option name="y" value="88" />
+                            <option name="x" value="1014" />
+                            <option name="y" value="-87" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -125,7 +99,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_deadline_to_SetFrequency">
+                            <entry key="action_deadline_to_customize">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -189,27 +163,6 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_priority_to_deadline2">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="randomize">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="1233" />
-                            <option name="y" value="-301" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_randomize_to_SetReminders">
                               <value>
                                 <LayoutPositions />
                               </value>

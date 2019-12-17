@@ -1,7 +1,12 @@
 package com.example.android.done;
 
 import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,18 +14,15 @@ import java.util.List;
 public class Converter {
 
     @TypeConverter
-    public CustomizeConverter storedStringToDays(String value) {
-        List<String> customDays = Arrays.asList(value.split("\\s*,\\s*"));
-        return new CustomizeConverter(customDays);
+    public static ArrayList<String> fromString(String value) {
+        Type listType = new TypeToken<ArrayList<String>>() {}.getType();
+        return new Gson().fromJson(value, listType);
     }
 
     @TypeConverter
-    public String daysToStoredString(CustomizeConverter cd) {
-        String value = "";
-
-        for (String days :cd.getCustomizeConverter())
-            value += days + ",";
-
-        return value;
+    public static String fromArrayList(ArrayList<String> list) {
+        Gson gson = new Gson();
+        String json = gson.toJson(list);
+        return json;
     }
 }

@@ -54,7 +54,7 @@ public class Deadline extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_deadline_to_SetFrequency);
+                navController.navigate(R.id.action_deadline_to_customize);
             }
         });
 

@@ -33,20 +33,20 @@ public class Customize extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        final CheckBox monday = view.findViewById(R.id.monday);
+        final CheckBox tuesday = view.findViewById(R.id.tuesday);
+        final CheckBox wednesday = view.findViewById(R.id.wednesday);
+        final CheckBox thursday = view.findViewById(R.id.thursday);
+        final CheckBox friday = view.findViewById(R.id.friday);
+        final CheckBox saturday = view.findViewById(R.id.saturday);
+        final CheckBox sunday = view.findViewById(R.id.sunday);
 
         navController = Navigation.findNavController(view);
         Button next = (Button) view.findViewById(R.id.custom_next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CheckBox monday = (CheckBox) getView().findViewById(R.id.monday);
-                CheckBox tuesday = (CheckBox) getView().findViewById(R.id.tuesday);
-                CheckBox wednesday = (CheckBox) getView().findViewById(R.id.wednesday);
-                CheckBox thursday = (CheckBox) getView().findViewById(R.id.thursday);
-                CheckBox friday = (CheckBox) getView().findViewById(R.id.friday);
-                CheckBox saturday = (CheckBox) getView().findViewById(R.id.saturday);
-                CheckBox sunday = (CheckBox) getView().findViewById(R.id.sunday);
+
                 if (monday.isChecked() || tuesday.isChecked() || wednesday.isChecked() || thursday.isChecked() || friday.isChecked() || saturday.isChecked() || sunday.isChecked()) {
                     navController.navigate(R.id.action_customize_to_SetReminders);
                 } else {

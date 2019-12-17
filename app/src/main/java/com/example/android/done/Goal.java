@@ -23,13 +23,16 @@ public class Goal {
 
     private int minute;
 
-    public Goal(String goalName, String motivation, String priority, Long deadline, int hour, int minute) {
+    private CustomizeConverter customizeConverter;
+
+    public Goal(String goalName, String motivation, String priority, Long deadline, int hour, int minute , CustomizeConverter customizeConverter) {
         this.goalName = goalName;
         this.motivation = motivation;
         this.priority = priority;
         this.deadline = deadline;
         this.hour = hour;
         this.minute = minute;
+        this.customizeConverter = customizeConverter;
     }
 
     public int getId() {
@@ -88,5 +91,11 @@ public class Goal {
         this.minute = minute;
     }
 
+    public CustomizeConverter getCustomizeConverter() {
+        return customizeConverter;
+    }
 
+    public void setCustomizeConverter(CustomizeConverter customizeConverter) {
+        this.customizeConverter = customizeConverter;
+    }
 }

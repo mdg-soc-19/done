@@ -25,6 +25,8 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
         itemLayout = layoutId;
     }
 
+
+
     @NonNull
     @Override
     public GoalHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
