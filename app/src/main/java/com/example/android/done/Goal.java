@@ -23,9 +23,9 @@ public class Goal {
 
     private int minute;
 
-    private CustomizeConverter customizeConverter;
+    private ArrayList<String > customizeConverter;
 
-    public Goal(String goalName, String motivation, String priority, Long deadline, int hour, int minute , CustomizeConverter customizeConverter) {
+    public Goal(String goalName, String motivation, String priority, Long deadline, int hour, int minute , ArrayList<String > customizeConverter) {
         this.goalName = goalName;
         this.motivation = motivation;
         this.priority = priority;
@@ -91,11 +91,11 @@ public class Goal {
         this.minute = minute;
     }
 
-    public CustomizeConverter getCustomizeConverter() {
+    public ArrayList<String> getCustomizeConverter() {
         return customizeConverter;
     }
 
-    public void setCustomizeConverter(CustomizeConverter customizeConverter) {
+    public void setCustomizeConverter(ArrayList<String> customizeConverter) {
         this.customizeConverter = customizeConverter;
     }
 }

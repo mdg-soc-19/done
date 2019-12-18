@@ -154,9 +154,8 @@ public class SetReminders extends Fragment {
                 Long inputDeadline = deadline.getDate();
                 int inputHour = reminder.getCurrentHour();
                 int inputMinute = reminder.getCurrentMinute();
-                CustomizeConverter days = new CustomizeConverter(inputDays);
 
-                Goal goal = new Goal(inputGoalName, inputMotivation, inputPriority, inputDeadline, inputHour, inputMinute, days);
+                Goal goal = new Goal(inputGoalName, inputMotivation, inputPriority, inputDeadline, inputHour, inputMinute, inputDays);
                 clearFields();
 
             }
