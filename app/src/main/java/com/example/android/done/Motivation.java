@@ -44,7 +44,8 @@ public class Motivation extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(motivation.getText()))
+                String input = motivation.getText().toString();
+                if(input.trim().isEmpty())
                 {
                     Toast.makeText(getContext(),"Please enter your motivation" , Toast.LENGTH_SHORT).show();
                 }

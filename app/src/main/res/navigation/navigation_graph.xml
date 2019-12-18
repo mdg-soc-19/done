@@ -74,13 +74,26 @@
         <action
             android:id="@+id/action_SetReminders_to_MyGoalsHome"
             app:destination="@id/MyGoalsHome" />
+        <argument
+            android:name="goalName"
+            app:argType="string" />
+        <argument
+            android:name="motivation"
+            app:argType="string" />
+        <argument
+            android:name="priority"
+            app:argType="string" />
+        <argument
+            android:name="deadline"
+            app:argType="long" />
     </fragment>
 
     <fragment
         android:id="@+id/MyGoalsHome"
         android:name="com.example.android.done.MyGoalsHome"
         android:label="fragment_my_goals_home"
-        tools:layout="@layout/fragment_my_goals_home" />
+        tools:layout="@layout/fragment_my_goals_home" >
+    </fragment>
 
 
 </navigation>

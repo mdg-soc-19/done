@@ -48,7 +48,8 @@ public class GoalName extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(goal_name.getText())) {
+                String input = goal_name.getText().toString();
+                if (input.trim().isEmpty()) {
 
                     Toast.makeText(getContext(),"Please enter your goal name" , Toast.LENGTH_SHORT).show();
 
