@@ -41,6 +41,7 @@ public class SetReminders extends Fragment {
     private GoalAdapter adapter;
     private TimePicker reminder;
     private Button save;
+    private String inputGoalName;
 
 
     @Override
@@ -53,6 +54,12 @@ public class SetReminders extends Fragment {
 
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+
+
+    }
 }
 

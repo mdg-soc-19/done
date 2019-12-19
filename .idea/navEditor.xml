@@ -114,12 +114,17 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-114" />
-                            <option name="y" value="-102" />
+                            <option name="x" value="-93" />
+                            <option name="y" value="-107" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_goalName_to_SetReminders">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_goalName_to_motivation">
                               <value>
                                 <LayoutPositions />

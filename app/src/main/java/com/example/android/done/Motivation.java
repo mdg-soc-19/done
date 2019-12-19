@@ -7,10 +7,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ import android.widget.Toast;
 
 public class Motivation extends Fragment {
     NavController navController;
+    SharedViewModel viewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class Motivation extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         navController = Navigation.findNavController(view);
         Button next = (Button) view.findViewById(R.id.next);
         final EditText motivation = (EditText) view.findViewById(R.id.motivation_edit_text);
@@ -50,6 +54,8 @@ public class Motivation extends Fragment {
                     Toast.makeText(getContext(),"Please enter your motivation" , Toast.LENGTH_SHORT).show();
                 }
                 else {
+
+                    viewModel.setMotivation(input);
                     navController.navigate(R.id.action_motivation_to_priority2);
                 }
             }
