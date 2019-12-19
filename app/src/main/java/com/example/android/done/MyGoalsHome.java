@@ -28,8 +28,8 @@ import java.util.Locale;
 
 public class MyGoalsHome extends Fragment {
 
-    GoalAdapter adapter;
-    GoalViewModel mViewModel;
+    private GoalAdapter adapter;
+    private GoalViewModel mViewModel;
 
 
 
@@ -44,9 +44,22 @@ public class MyGoalsHome extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
+        observerSetup();
         recyclerSetup();
 
 
+    }
+
+    private void observerSetup()
+    {
+        mViewModel.getAllGoals().observe(this, new Observer<List<Goal>>() {
+            @Override
+            public void onChanged(List<Goal> goals) {
+                adapter.setGoals(goals);
+            }
+        });
     }
 
     private void recyclerSetup()

@@ -40,8 +40,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
 
         Goal currentGoal = goals.get(position);
         holder.textViewGoalName.setText(currentGoal.getGoalName());
-        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        holder.textViewDeadline.setText(formatter.format(currentGoal.getDeadline()));
+        holder.textViewDeadline.setText(currentGoal.getDeadline());
         holder.textViewPriority.setText(currentGoal.getPriority());
 
 
