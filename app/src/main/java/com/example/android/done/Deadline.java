@@ -59,7 +59,6 @@ public class Deadline extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
-
         navController = Navigation.findNavController(view);
         Button next = (Button) view.findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {

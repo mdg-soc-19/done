@@ -56,6 +56,7 @@ public class Motivation extends Fragment {
                 else {
 
                     viewModel.setMotivation(input);
+
                     navController.navigate(R.id.action_motivation_to_priority2);
                 }
             }

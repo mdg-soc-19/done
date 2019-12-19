@@ -28,6 +28,9 @@ import java.util.Locale;
 
 public class MyGoalsHome extends Fragment {
 
+    GoalAdapter adapter;
+    GoalViewModel mViewModel;
+
 
 
     @Override
@@ -38,5 +41,24 @@ public class MyGoalsHome extends Fragment {
 
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        recyclerSetup();
 
-}
+
+    }
+
+    private void recyclerSetup()
+    {
+        RecyclerView recyclerView;
+
+        adapter = new GoalAdapter(R.layout.goal_item);
+        recyclerView = getView().findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
+    }
+
+
+    }
+

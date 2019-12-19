@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,10 +39,11 @@ import java.util.Locale;
 public class SetReminders extends Fragment {
 
     private GoalViewModel mViewModel;
+    private SharedViewModel viewModel;
     private GoalAdapter adapter;
     private TimePicker reminder;
     private Button save;
-    private String inputGoalName;
+    NavController navController;
 
 
     @Override
@@ -57,9 +59,53 @@ public class SetReminders extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        reminder = view.findViewById(R.id.reminder_time_picker);
+        mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
+        viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
+        viewModel.setHour(reminder.getChildCount());
+        viewModel.setMinute(reminder.getCurrentMinute());
+        navController = Navigation.findNavController(view);
+        save = view.findViewById(R.id.save_button);
 
-
+        listenerSetup();
 
     }
+
+    private void clearFields() {
+        ArrayList<String> days = new ArrayList<>();
+        for (int i = 0; i < 7; i++) {
+            days.add("-1");
+        }
+        viewModel.setGoalName("");
+        viewModel.setMotivation("");
+        viewModel.setDeadline("");
+        viewModel.setDays(days);
+        viewModel.setHour(-1);
+        viewModel.setMinute(-1);
+    }
+
+    private void listenerSetup() {
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String inputGoalName = viewModel.getGoalName();
+                String inputMotivation = viewModel.getMotivation();
+                String inputPriority = viewModel.getPriority();
+                String inputDeadline = viewModel.getDeadline();
+                ArrayList<String> inputDays = viewModel.getDays();
+                int inputHour = viewModel.getHour();
+                int inputMinute = viewModel.getMinute();
+
+                Goal goal = new Goal(inputGoalName , inputMotivation , inputPriority , inputDeadline , inputHour , inputMinute , inputDays);
+                mViewModel.insert(goal);
+                navController.navigate(R.id.action_SetReminders_to_MyGoalsHome);
+
+
+            }
+        });
+    }
+
+
+
 }
 

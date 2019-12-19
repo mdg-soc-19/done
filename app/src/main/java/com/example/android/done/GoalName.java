@@ -55,11 +55,11 @@ public class GoalName extends Fragment {
                 String input = goal_name.getText().toString();
                 if (input.trim().isEmpty()) {
 
-                    Toast.makeText(getContext(),"Please enter your goal name" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Please enter your goal name", Toast.LENGTH_SHORT).show();
 
                 } else {
                     viewModel.setGoalName(input);
-                    navController.navigate(R.id.action_goalName_to_motivation );
+                    navController.navigate(R.id.action_goalName_to_motivation);
 
 
                 }

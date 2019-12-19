@@ -17,7 +17,7 @@ public class Goal {
 
     private String priority;
 
-    private Long deadline;
+    private String deadline;
 
     private int hour;
 
@@ -25,7 +25,7 @@ public class Goal {
 
     private ArrayList<String > customizeConverter;
 
-    public Goal(String goalName, String motivation, String priority, Long deadline, int hour, int minute , ArrayList<String > customizeConverter) {
+    public Goal(String goalName, String motivation, String priority, String deadline, int hour, int minute , ArrayList<String > customizeConverter) {
         this.goalName = goalName;
         this.motivation = motivation;
         this.priority = priority;
@@ -67,11 +67,11 @@ public class Goal {
         this.priority = priority;
     }
 
-    public Long getDeadline() {
+    public String getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Long deadline) {
+    public void setDeadline(String deadline) {
         this.deadline = deadline;
     }
 
