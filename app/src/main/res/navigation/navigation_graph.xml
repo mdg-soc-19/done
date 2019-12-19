@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_HomePage_to_goalName"
             app:destination="@id/goalName" />
+        <action
+            android:id="@+id/action_HomePage_to_MyGoalsHome"
+            app:destination="@id/MyGoalsHome" />
     </fragment>
     <fragment
         android:id="@+id/goalName"
@@ -23,6 +26,7 @@
         <action
             android:id="@+id/action_goalName_to_motivation"
             app:destination="@id/motivation" />
+
     </fragment>
     <fragment
         android:id="@+id/motivation"
@@ -49,31 +53,8 @@
         android:label="fragment_deadline"
         tools:layout="@layout/fragment_deadline" >
         <action
-            android:id="@+id/action_deadline_to_SetFrequency"
-            app:destination="@id/SetFrequency" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/SetFrequency"
-        android:name="com.example.android.done.SetFrequency"
-        android:label="fragment_set_frequency"
-        tools:layout="@layout/fragment_set_frequency" >
-        <action
-            android:id="@+id/action_SetFrequency_to_randomize"
-            app:destination="@id/randomize" />
-        <action
-            android:id="@+id/action_SetFrequency_to_customize"
+            android:id="@+id/action_deadline_to_customize"
             app:destination="@id/customize" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/randomize"
-        android:name="com.example.android.done.Randomize"
-        android:label="fragment_randomize"
-        tools:layout="@layout/fragment_randomize" >
-        <action
-            android:id="@+id/action_randomize_to_SetReminders"
-            app:destination="@id/SetReminders" />
     </fragment>
 
     <fragment
@@ -90,7 +71,18 @@
         android:id="@+id/SetReminders"
         android:name="com.example.android.done.SetReminders"
         android:label="fragment_set_reminders"
-        tools:layout="@layout/fragment_set_reminders" />
+        tools:layout="@layout/fragment_set_reminders" >
+        <action
+            android:id="@+id/action_SetReminders_to_MyGoalsHome"
+            app:destination="@id/MyGoalsHome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyGoalsHome"
+        android:name="com.example.android.done.MyGoalsHome"
+        android:label="fragment_my_goals_home"
+        tools:layout="@layout/fragment_my_goals_home" >
+    </fragment>
 
 
 </navigation>

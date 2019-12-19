@@ -12,6 +12,7 @@
         android:icon="@drawable/new_goal"
         android:title="New Goal" />
     <item
+        android:id="@+id/MyGoalsHome"
         android:icon="@drawable/my_goals"
         android:title="My Goals" />
     <item

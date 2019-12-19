@@ -4,17 +4,46 @@ package com.example.android.done;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import java.lang.reflect.Array;
+import java.time.DayOfWeek;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
 
 
 public class SetReminders extends Fragment {
+
+    private GoalViewModel mViewModel;
+    private SharedViewModel viewModel;
+    private GoalAdapter adapter;
+    private TimePicker reminder;
+    private Button save;
+    NavController navController;
 
 
     @Override
@@ -23,30 +52,60 @@ public class SetReminders extends Fragment {
 
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_set_reminders, container, false);
-        final Button before_button = (Button) v.findViewById(R.id.before_button);
-        before_button.setOnClickListener(new View.OnClickListener() {
+        return inflater.inflate(R.layout.fragment_set_reminders, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        reminder = view.findViewById(R.id.reminder_time_picker);
+        mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
+        viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
+        viewModel.setHour(reminder.getChildCount());
+        viewModel.setMinute(reminder.getCurrentMinute());
+        navController = Navigation.findNavController(view);
+        save = view.findViewById(R.id.save_button);
+
+        listenerSetup();
+
+    }
+
+    private void clearFields() {
+        ArrayList<String> days = new ArrayList<>();
+        for (int i = 0; i < 7; i++) {
+            days.add("-1");
+        }
+        viewModel.setGoalName("");
+        viewModel.setMotivation("");
+        viewModel.setDeadline("");
+        viewModel.setDays(days);
+        viewModel.setHour(-1);
+        viewModel.setMinute(-1);
+    }
+
+    private void listenerSetup() {
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar mcurrentTime = Calendar.getInstance();
-                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
-                int minute = mcurrentTime.get(Calendar.MINUTE);
+                String inputGoalName = viewModel.getGoalName();
+                String inputMotivation = viewModel.getMotivation();
+                String inputPriority = viewModel.getPriority();
+                String inputDeadline = viewModel.getDeadline();
+                ArrayList<String> inputDays = viewModel.getDays();
+                int inputHour = viewModel.getHour();
+                int inputMinute = viewModel.getMinute();
 
-                TimePickerDialog mTimePicker;
-                mTimePicker = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        before_button.setText( selectedHour + ":" + selectedMinute);
-                    }
-                }, hour, minute, false);
-                mTimePicker.setTitle("Select Time");
-                mTimePicker.show();
+                Goal goal = new Goal(inputGoalName , inputMotivation , inputPriority , inputDeadline , inputHour , inputMinute , inputDays);
+                mViewModel.insert(goal);
+                navController.navigate(R.id.action_SetReminders_to_MyGoalsHome);
+
+
             }
         });
-
-
-return v;
     }
 
 
+
 }
+
