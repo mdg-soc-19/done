@@ -65,6 +65,20 @@ public class Deadline extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_deadline_to_customize);
+                String date = viewModel.getDeadline();
+                String[] parts = date.split("/");
+
+                int day = Integer.parseInt(parts[0]);
+                int month = Integer.parseInt(parts[1]);
+                int year = Integer.parseInt(parts[2]);
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, day);
+
+                long milliTime = calendar.getTimeInMillis();
+                calendarView.setDate(milliTime , true , true);
             }
         });
 
