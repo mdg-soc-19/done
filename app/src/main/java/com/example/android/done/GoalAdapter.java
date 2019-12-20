@@ -59,6 +59,25 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
         notifyDataSetChanged();
     }
 
+    public Goal getNoteAT(int position)
+    {
+        return goals.get(position);
+    }
+
+    public void removeGoal ( int position)
+    {
+        goals.remove(position);
+        notifyItemRemoved(position);
+    }
+
+
+    public void restoreGoal ( Goal goal , int position)
+
+    {
+        goals.add(position , goal);
+        notifyItemInserted(position);
+    }
+
     class GoalHolder extends RecyclerView.ViewHolder{
 
         private TextView textViewGoalName;

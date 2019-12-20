@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.PrimaryKey;
@@ -25,11 +26,14 @@ import android.widget.Toast;
 
 import java.util.List;
 import java.util.Locale;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class MyGoalsHome extends Fragment {
 
     private GoalAdapter adapter;
     private GoalViewModel mViewModel;
+    private RecyclerView recyclerView;
 
 
 
@@ -46,8 +50,35 @@ public class MyGoalsHome extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
+        recyclerView = view.findViewById(R.id.recycler_view);
         observerSetup();
         recyclerSetup();
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback( 0 , ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+                int position = viewHolder.getAdapterPosition();
+                Goal goal = adapter.getNoteAT(position);
+
+                adapter.removeGoal(position);
+
+                AlertDialog diaBox = AskOption(position , goal);
+                diaBox.show();
+
+            }
+        }).attachToRecyclerView(recyclerView);
+
+
+
+
+
+
 
 
     }
@@ -64,12 +95,42 @@ public class MyGoalsHome extends Fragment {
 
     private void recyclerSetup()
     {
-        RecyclerView recyclerView;
 
         adapter = new GoalAdapter(R.layout.goal_item);
-        recyclerView = getView().findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+    }
+
+    private AlertDialog AskOption( int position , Goal goal)
+    {
+        AlertDialog confrimationDialogBox = new AlertDialog.Builder(getActivity())
+                // set message, title, and icon
+                .setTitle("Delete")
+                .setMessage("Do you want to Delete")
+
+
+                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+
+                        mViewModel.delete(goal);
+                        dialog.dismiss();
+                    }
+
+                })
+                .setNegativeButton("Undo", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        adapter.restoreGoal(goal , position);
+                        recyclerView.scrollToPosition(position);
+                        dialog.dismiss();
+
+                    }
+                })
+                .create();
+
+        return confrimationDialogBox;
     }
 
 
