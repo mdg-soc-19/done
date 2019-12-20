@@ -40,15 +40,6 @@ public class Deadline extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_deadline, container, false);
-        calendarView = (CalendarView) v.findViewById(R.id.calendar_view);
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String deadline = dayOfMonth + "/" + month + "/" + year;
-                viewModel.setDeadline(deadline);
-                Toast.makeText(getContext(), "Deadline: "+deadline , Toast.LENGTH_SHORT).show();
-            }
-        });
 
         return v;
 
@@ -60,6 +51,33 @@ public class Deadline extends Fragment {
 
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         navController = Navigation.findNavController(view);
+
+        calendarView = view.findViewById(R.id.calendar_view);
+        if(!viewModel.getDeadline().trim().isEmpty())
+        {
+            String date = viewModel.getDeadline();
+            String[] parts = date.split("/");
+
+            int day = Integer.parseInt(parts[0]);
+            int month = Integer.parseInt(parts[1]);
+            int year = Integer.parseInt(parts[2]);
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, month);
+            calendar.set(Calendar.DAY_OF_MONTH, day);
+
+            long milliTime = calendar.getTimeInMillis();
+            calendarView.setDate(milliTime , true , true);
+        }
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                String deadline = dayOfMonth + "/" + month + "/" + year;
+                viewModel.setDeadline(deadline);
+                Toast.makeText(getContext(), "Deadline: " + deadline, Toast.LENGTH_SHORT).show();
+            }
+        });
         Button next = (Button) view.findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
