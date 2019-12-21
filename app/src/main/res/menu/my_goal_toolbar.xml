@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/edit_action"
+        android:icon="@drawable/edit"
+        android:title="Edit"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/calendar_action"
+        android:icon="@drawable/calendar"
+        android:title="Calendar"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/stats_action"
+        android:icon="@drawable/stats"
+        android:title="Statistics"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/journal_action"
+        android:icon="@drawable/journal"
+        android:title="Journal"
+        app:showAsAction="always"/>
+
+</menu>
