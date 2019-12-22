@@ -20,21 +20,22 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
 
     private int itemLayout;
     private List<Goal> goals = new ArrayList<>();
-    private OnGoalListener onGoalListener;
+    private OnGoalListener mOnGoalListener;
+
 
     public GoalAdapter(int layoutId , OnGoalListener onGoalListener) {
         itemLayout = layoutId;
-        this.onGoalListener = onGoalListener;
-    }
+        this.mOnGoalListener = onGoalListener;
 
+    }
 
 
     @NonNull
     @Override
     public GoalHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_item , parent , false);
-        return new GoalHolder(itemView, onGoalListener);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_item, parent, false);
+        return new GoalHolder(itemView ,mOnGoalListener);
     }
 
     @Override
@@ -55,47 +56,46 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
         return goals.size();
     }
 
-    public void setGoals(List<Goal> goals)
-    {
+    public void setGoals(List<Goal> goals) {
         this.goals = goals;
         notifyDataSetChanged();
     }
 
-    public Goal getNoteAT(int position)
-    {
+    public Goal getNoteAT(int position) {
         return goals.get(position);
     }
 
-    public void removeGoal ( int position)
-    {
+    public void removeGoal(int position) {
         goals.remove(position);
         notifyItemRemoved(position);
     }
 
 
-    public void restoreGoal ( Goal goal , int position)
-
-    {
-        goals.add(position , goal);
+    public void restoreGoal(Goal goal, int position) {
+        goals.add(position, goal);
         notifyItemInserted(position);
     }
 
-    class GoalHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class GoalHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView textViewGoalName;
         private TextView textViewDeadline;
         private TextView textViewPriority;
         OnGoalListener onGoalListener;
 
-        public GoalHolder(@NonNull View itemView , OnGoalListener onGoalListener)  {
+
+        public GoalHolder(@NonNull View itemView, OnGoalListener onGoalListener) {
             super(itemView);
             textViewGoalName = itemView.findViewById(R.id.goa_name_text_view);
             textViewDeadline = itemView.findViewById(R.id.deadline_text_view);
             textViewPriority = itemView.findViewById(R.id.priority_text_view);
+
             this.onGoalListener = onGoalListener;
+            itemView.setOnClickListener(this);
 
 
         }
+
 
         @Override
         public void onClick(View v) {
@@ -104,8 +104,10 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
         }
     }
 
-    public interface OnGoalListener{
+    public interface OnGoalListener {
 
         void onGoalClick(int position);
     }
+
+
 }

@@ -31,7 +31,7 @@ import java.util.Locale;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
-public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener{
+public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener {
 
     private GoalAdapter adapter;
     private GoalViewModel mViewModel;
@@ -99,7 +99,7 @@ public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener{
     private void recyclerSetup()
     {
 
-        adapter = new GoalAdapter(R.layout.goal_item , this);
+        adapter = new GoalAdapter(R.layout.goal_item  , this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
     }
@@ -140,8 +140,8 @@ public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener{
     @Override
     public void onGoalClick(int position) {
 
-        Log.v("Clicked" , String.valueOf(position));
-        navController.navigate(R.id.action_MyGoalsHome_to_MyGoal);
+
+        Log.d("clciked" , String.valueOf(position));
 
     }
 }
