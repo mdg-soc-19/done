@@ -143,8 +143,11 @@ public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener 
     @Override
     public void onGoalClick(int position) {
 
+        Goal goalSelected = adapter.getNoteAT(position);
+        int id = goalSelected.getId();
         navController.navigate(R.id.action_MyGoalsHome_to_MyGoal);
         Log.d("clciked" , String.valueOf(position));
+        Log.d("id:" , String.valueOf(id));
 
 
     }

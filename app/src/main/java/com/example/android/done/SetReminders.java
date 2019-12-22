@@ -80,8 +80,8 @@ public class SetReminders extends Fragment {
         viewModel.setMotivation("");
         viewModel.setDeadline("");
         viewModel.setDays(days);
-        viewModel.setHour(-1);
-        viewModel.setMinute(-1);
+        viewModel.setHour(0);
+        viewModel.setMinute(0);
     }
 
     private void listenerSetup() {
@@ -98,6 +98,7 @@ public class SetReminders extends Fragment {
 
                 Goal goal = new Goal(inputGoalName , inputMotivation , inputPriority , inputDeadline , inputHour , inputMinute , inputDays);
                 mViewModel.insert(goal);
+                clearFields();
                 navController.navigate(R.id.action_SetReminders_to_MyGoalsHome);
 
 
