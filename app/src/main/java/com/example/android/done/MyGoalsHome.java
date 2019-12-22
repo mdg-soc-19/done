@@ -37,6 +37,7 @@ public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener 
     private GoalAdapter adapter;
     private GoalViewModel mViewModel;
     private RecyclerView recyclerView;
+    MyGoalViewModel myGoalViewModel;
     NavController navController;
 
 
@@ -145,11 +146,10 @@ public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener 
 
         Goal goalSelected = adapter.getNoteAT(position);
         int id = goalSelected.getId();
+        myGoalViewModel = ViewModelProviders.of(getActivity()).get(MyGoalViewModel.class);
+        myGoalViewModel.setMyGoal(goalSelected);
+        myGoalViewModel.setMyId(id);
         navController.navigate(R.id.action_MyGoalsHome_to_MyGoal);
-        Log.d("clciked" , String.valueOf(position));
-        Log.d("id:" , String.valueOf(id));
-
-
     }
 }
 
