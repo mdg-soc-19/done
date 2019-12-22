@@ -55,6 +55,15 @@
                             <option name="y" value="369" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_MyGoal_to_EditGoal">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -69,7 +78,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_MyGoalsHome_to_MYGoal">
+                            <entry key="action_MyGoalsHome_to_MyGoal">
                               <value>
                                 <LayoutPositions />
                               </value>
