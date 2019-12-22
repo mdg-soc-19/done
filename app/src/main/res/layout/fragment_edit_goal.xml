@@ -19,6 +19,7 @@
             android:textAllCaps="true" />
 
         <EditText
+            android:id="@+id/edit_goal_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Input goal name" />
@@ -32,6 +33,7 @@
             android:textAllCaps="true" />
 
         <EditText
+            android:id="@+id/edit_motivation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Input motivation" />
@@ -64,7 +66,8 @@
         <CalendarView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:id="@+id/edit_deadline"/>
 
 
         <TextView
@@ -86,16 +89,19 @@
                 android:orientation="vertical">
 
                 <CheckBox
+                    android:id="@+id/edit_monday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="MONDAY" />
 
                 <CheckBox
+                    android:id="@+id/edit_tuesday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TUESDAY" />
 
                 <CheckBox
+                    android:id="@+id/edit_wednesday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="WEDNESDAY" />
@@ -110,16 +116,19 @@
                 android:orientation="vertical">
 
                 <CheckBox
+                    android:id="@+id/edit_thursday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="THURSDAY" />
 
                 <CheckBox
+                    android:id="@+id/edit_friday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="FRIDAY" />
 
                 <CheckBox
+                    android:id="@+id/edit_saturday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SATURDAY" />
@@ -128,6 +137,7 @@
             </LinearLayout>
 
             <CheckBox
+                android:id="@+id/edit_sunday"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -145,6 +155,7 @@
             android:textAllCaps="true" />
 
         <TimePicker
+            android:id="@+id/edit_reminder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />

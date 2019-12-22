@@ -62,8 +62,14 @@ public class SetReminders extends Fragment {
         reminder = view.findViewById(R.id.reminder_time_picker);
         mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
-        viewModel.setHour(reminder.getChildCount());
-        viewModel.setMinute(reminder.getCurrentMinute());
+        reminder.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                viewModel.setHour(hourOfDay);
+                viewModel.setMinute(minute);
+
+            }
+        });
         navController = Navigation.findNavController(view);
         save = view.findViewById(R.id.save_button);
 
@@ -98,7 +104,8 @@ public class SetReminders extends Fragment {
 
                 Goal goal = new Goal(inputGoalName , inputMotivation , inputPriority , inputDeadline , inputHour , inputMinute , inputDays);
                 mViewModel.insert(goal);
-                clearFields();
+                Log.v("hour" ,String.valueOf(goal.getHour()));
+                Log.v("minute" , String.valueOf(goal.getMinute()));
                 navController.navigate(R.id.action_SetReminders_to_MyGoalsHome);
 
 
