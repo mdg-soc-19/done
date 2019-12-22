@@ -149,6 +149,7 @@ public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener 
         myGoalViewModel = ViewModelProviders.of(getActivity()).get(MyGoalViewModel.class);
         myGoalViewModel.setMyGoal(goalSelected);
         myGoalViewModel.setMyId(id);
+        Log.v("id on selection" , String.valueOf(goalSelected.getId()));
         navController.navigate(R.id.action_MyGoalsHome_to_MyGoal);
     }
 }

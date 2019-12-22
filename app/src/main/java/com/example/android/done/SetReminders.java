@@ -104,9 +104,8 @@ public class SetReminders extends Fragment {
 
                 Goal goal = new Goal(inputGoalName , inputMotivation , inputPriority , inputDeadline , inputHour , inputMinute , inputDays);
                 mViewModel.insert(goal);
-                Log.v("hour" ,String.valueOf(goal.getHour()));
-                Log.v("minute" , String.valueOf(goal.getMinute()));
                 navController.navigate(R.id.action_SetReminders_to_MyGoalsHome);
+                clearFields();
 
 
             }

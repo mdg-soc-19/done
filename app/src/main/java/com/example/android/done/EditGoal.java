@@ -7,18 +7,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -38,6 +42,10 @@ public class EditGoal extends Fragment {
     private CheckBox editSunday;
     private TimePicker editReminder;
     MyGoalViewModel myGoalViewModel;
+    private Button saveChanges;
+    SharedViewModel sharedViewModel;
+    private GoalViewModel mViewModel;
+    NavController navController;
 
 
     @Override
@@ -62,6 +70,9 @@ public class EditGoal extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         myGoalViewModel = ViewModelProviders.of(getActivity()).get(MyGoalViewModel.class);
+        mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
+        sharedViewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
+        navController = Navigation.findNavController(view);
         Goal myGoal = myGoalViewModel.getMyGoal();
         editGoalName = view.findViewById(R.id.edit_goal_name);
         editGoalName.setText(myGoal.getGoalName());
@@ -104,39 +115,32 @@ public class EditGoal extends Fragment {
         editFriday = view.findViewById(R.id.edit_friday);
         editSaturday = view.findViewById(R.id.edit_saturday);
         editSunday = view.findViewById(R.id.edit_sunday);
-        if(myGoal.getCustomizeConverter().get(0).equals("MONDAY"))
-        {
+        if (myGoal.getCustomizeConverter().get(0).equals("MONDAY")) {
             editMonday.setChecked(true);
         }
-        if(myGoal.getCustomizeConverter().get(1).equals("TUESDAY"))
-        {
+        if (myGoal.getCustomizeConverter().get(1).equals("TUESDAY")) {
             editTuesday.setChecked(true);
         }
-        if(myGoal.getCustomizeConverter().get(2).equals("WEDNESDAY"))
-        {
+        if (myGoal.getCustomizeConverter().get(2).equals("WEDNESDAY")) {
             editWednesday.setChecked(true);
         }
-        if(myGoal.getCustomizeConverter().get(3).equals("THURSDAY"))
-        {
+        if (myGoal.getCustomizeConverter().get(3).equals("THURSDAY")) {
             editThursday.setChecked(true);
         }
-        if(myGoal.getCustomizeConverter().get(4).equals("FRIDAY"))
-        {
+        if (myGoal.getCustomizeConverter().get(4).equals("FRIDAY")) {
             editFriday.setChecked(true);
         }
-        if(myGoal.getCustomizeConverter().get(5).equals("SATURDAY"))
-        {
+        if (myGoal.getCustomizeConverter().get(5).equals("SATURDAY")) {
             editSaturday.setChecked(true);
         }
-        if(myGoal.getCustomizeConverter().get(6).equals("SUNDAY"))
-        {
+        if (myGoal.getCustomizeConverter().get(6).equals("SUNDAY")) {
             editSunday.setChecked(true);
         }
         editReminder = view.findViewById(R.id.edit_reminder);
         editReminder.setCurrentMinute(myGoal.getMinute());
         editReminder.setCurrentHour(myGoal.getHour());
-
-
+        saveChanges = view.findViewById(R.id.save_changes_button);
 
     }
+
 }
