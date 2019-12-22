@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,6 +55,8 @@ public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener 
 
         mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
         recyclerView = view.findViewById(R.id.recycler_view);
+        navController = Navigation.findNavController(view);
+
         observerSetup();
         recyclerSetup();
 
@@ -140,8 +143,9 @@ public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener 
     @Override
     public void onGoalClick(int position) {
 
-
+        navController.navigate(R.id.action_MyGoalsHome_to_MyGoal);
         Log.d("clciked" , String.valueOf(position));
+
 
     }
 }

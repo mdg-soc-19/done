@@ -82,7 +82,6 @@
         android:name="com.example.android.done.MyGoalsHome"
         android:label="fragment_my_goals_home"
         tools:layout="@layout/fragment_my_goals_home" >
-
         <action
             android:id="@+id/action_MyGoalsHome_to_MyGoal"
             app:destination="@id/MyGoal" />
@@ -90,9 +89,9 @@
 
     <fragment
         android:id="@+id/MyGoal"
-        android:label="fragment_my_goal"
         android:name="com.example.android.done.MyGoal"
-        tools:layout="@layout/fragment_my_goal">
+        android:label="fragment_my_goal"
+        tools:layout="@layout/fragment_my_goal" >
         <action
             android:id="@+id/action_MyGoal_to_EditGoal"
             app:destination="@id/EditGoal" />
@@ -100,11 +99,9 @@
 
     <fragment
         android:id="@+id/EditGoal"
-        android:label="fragment_edit_goal"
         android:name="com.example.android.done.EditGoal"
-        tools:layout="@layout/fragment_edit_goal"/>
-
-
+        android:label="fragment_edit_goal"
+        tools:layout="@layout/fragment_edit_goal" />
 
 
 </navigation>
