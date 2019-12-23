@@ -14,8 +14,9 @@ import android.app.DialogFragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
+    NavController navController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-
 
 
 

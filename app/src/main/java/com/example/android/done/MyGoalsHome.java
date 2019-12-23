@@ -9,11 +9,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.PrimaryKey;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,11 +32,13 @@ import java.util.Locale;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
-public class MyGoalsHome extends Fragment {
+public class MyGoalsHome extends Fragment implements GoalAdapter.OnGoalListener {
 
     private GoalAdapter adapter;
     private GoalViewModel mViewModel;
     private RecyclerView recyclerView;
+    MyGoalViewModel myGoalViewModel;
+    NavController navController;
 
 
 
@@ -51,6 +56,8 @@ public class MyGoalsHome extends Fragment {
 
         mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
         recyclerView = view.findViewById(R.id.recycler_view);
+        navController = Navigation.findNavController(view);
+
         observerSetup();
         recyclerSetup();
 
@@ -96,7 +103,7 @@ public class MyGoalsHome extends Fragment {
     private void recyclerSetup()
     {
 
-        adapter = new GoalAdapter(R.layout.goal_item);
+        adapter = new GoalAdapter(R.layout.goal_item  , this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
     }
@@ -134,7 +141,16 @@ public class MyGoalsHome extends Fragment {
     }
 
 
+    @Override
+    public void onGoalClick(int position) {
 
-
+        Goal goalSelected = adapter.getNoteAT(position);
+        int id = goalSelected.getId();
+        myGoalViewModel = ViewModelProviders.of(getActivity()).get(MyGoalViewModel.class);
+        myGoalViewModel.setMyGoal(goalSelected);
+        myGoalViewModel.setMyId(id);
+        Log.v("id on selection" , String.valueOf(goalSelected.getId()));
+        navController.navigate(R.id.action_MyGoalsHome_to_MyGoal);
     }
+}
 

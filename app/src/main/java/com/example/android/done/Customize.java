@@ -58,62 +58,7 @@ public class Customize extends Fragment {
         navController = Navigation.findNavController(view);
         next =  view.findViewById(R.id.custom_next);
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
-        if (monday.isChecked())
-        {
-            inputdays.add("MONDAY");
-        }
-        else
-        {
-            inputdays.add("-1");
-        }
-        if (tuesday.isChecked())
-        {
-            inputdays.add("TUESDAY");
-        }
-        else
-        {
-            inputdays.add("-1");
-        }
-        if (wednesday.isChecked())
-        {
-            inputdays.add("WEDNESDAY");
-        }
-        else
-        {
-            inputdays.add("-1");
-        }
-        if (thursday.isChecked())
-        {
-            inputdays.add("THURSDAY");
-        }
-        else
-        {
-            inputdays.add("-1");
-        }
-        if (friday.isChecked())
-        {
-            inputdays.add("FRIDAY");
-        }
-        else
-        {
-            inputdays.add("-1");
-        }
-        if (saturday.isChecked())
-        {
-            inputdays.add("SATURDAY");
-        }
-        else
-        {
-            inputdays.add("-1");
-        }
-        if (sunday.isChecked())
-        {
-            inputdays.add("SUNDAY");
-        }
-        else
-        {
-            inputdays.add("-1");
-        }
+
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +66,62 @@ public class Customize extends Fragment {
 
                 if (monday.isChecked() || tuesday.isChecked() || wednesday.isChecked() || thursday.isChecked() || friday.isChecked() || saturday.isChecked() || sunday.isChecked()) {
                     navController.navigate(R.id.action_customize_to_SetReminders);
+                    if (monday.isChecked())
+                    {
+                        inputdays.add("MONDAY");
+                    }
+                    else
+                    {
+                        inputdays.add("-1");
+                    }
+                    if (tuesday.isChecked())
+                    {
+                        inputdays.add("TUESDAY");
+                    }
+                    else
+                    {
+                        inputdays.add("-1");
+                    }
+                    if (wednesday.isChecked())
+                    {
+                        inputdays.add("WEDNESDAY");
+                    }
+                    else
+                    {
+                        inputdays.add("-1");
+                    }
+                    if (thursday.isChecked())
+                    {
+                        inputdays.add("THURSDAY");
+                    }
+                    else
+                    {
+                        inputdays.add("-1");
+                    }
+                    if (friday.isChecked())
+                    {
+                        inputdays.add("FRIDAY");
+                    }
+                    else
+                    {
+                        inputdays.add("-1");
+                    }
+                    if (saturday.isChecked())
+                    {
+                        inputdays.add("SATURDAY");
+                    }
+                    else
+                    {
+                        inputdays.add("-1");
+                    }
+                    if (sunday.isChecked())
+                    {
+                        inputdays.add("SUNDAY");
+                    }
+                    else
+                    {
+                        inputdays.add("-1");
+                    }
                     viewModel.setDays(inputdays);
 
                 } else {
