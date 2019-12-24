@@ -4,7 +4,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class SharedViewModel extends ViewModel {
 
@@ -71,6 +73,8 @@ public class SharedViewModel extends ViewModel {
     public void setDays(ArrayList<String> days) {
         this.days = days;
     }
+
+
 
 
 }

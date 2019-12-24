@@ -55,7 +55,6 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
             String deadline = day+ "/" + (month +1 )+ "/" + year;
             holder.textViewDeadline.setText(deadline);
         }
-
         holder.textViewPriority.setText(currentGoal.getPriority());
 
 

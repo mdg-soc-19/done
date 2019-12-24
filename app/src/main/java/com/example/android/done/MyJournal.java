@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MyJournal extends Fragment {
@@ -52,6 +53,8 @@ public class MyJournal extends Fragment {
                 myGoal.setJournal(updatedJournalEntry);
                 mViewModel.update(myGoal);
                 navController.navigate(R.id.action_MyJournal_to_MyGoal);
+                Toast.makeText(getContext() , "Journal entry saved" , Toast.LENGTH_SHORT).show();
+
 
 
             }

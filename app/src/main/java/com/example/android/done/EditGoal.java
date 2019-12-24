@@ -23,6 +23,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -258,6 +259,7 @@ public class EditGoal extends Fragment {
                 myGoalViewModel.setMyGoal(updatedGoal);
                 clearFields();
                 navController.navigate(R.id.action_EditGoal_to_MyGoal);
+                Toast.makeText(getContext() , "Changes saved" , Toast.LENGTH_SHORT).show();
 
             }
         });
