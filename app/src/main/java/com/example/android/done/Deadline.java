@@ -75,7 +75,7 @@ public class Deadline extends Fragment {
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String deadline = dayOfMonth + "/" + month + "/" + year;
                 viewModel.setDeadline(deadline);
-                Toast.makeText(getContext(), "Deadline: " + deadline, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Deadline: " + dayOfMonth + "/" + (month+1) + "/" + year ,  Toast.LENGTH_SHORT).show();
             }
         });
         Button next = (Button) view.findViewById(R.id.next);
