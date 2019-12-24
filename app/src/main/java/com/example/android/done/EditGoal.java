@@ -256,12 +256,30 @@ public class EditGoal extends Fragment {
                 updatedGoal.setId(myGoal.getId());
                 mViewModel.update(updatedGoal);
                 myGoalViewModel.setMyGoal(updatedGoal);
+                clearFields();
                 navController.navigate(R.id.action_EditGoal_to_MyGoal);
 
             }
         });
 
 
+    }
+
+
+
+
+
+    private void clearFields() {
+        ArrayList<String> days = new ArrayList<>();
+        for (int i = 0; i < 7; i++) {
+            days.add("-1");
+        }
+        sharedViewModel.setGoalName("");
+        sharedViewModel.setMotivation("");
+        sharedViewModel.setDeadline("");
+        sharedViewModel.setDays(days);
+        sharedViewModel.setHour(0);
+        sharedViewModel.setMinute(0);
     }
 
 }
