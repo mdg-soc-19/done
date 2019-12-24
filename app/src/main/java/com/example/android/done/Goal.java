@@ -25,6 +25,8 @@ public class Goal {
 
     private ArrayList<String > customizeConverter;
 
+    private String journal;
+
     public Goal(String goalName, String motivation, String priority, String deadline, int hour, int minute , ArrayList<String > customizeConverter) {
         this.goalName = goalName;
         this.motivation = motivation;
@@ -97,5 +99,13 @@ public class Goal {
 
     public void setCustomizeConverter(ArrayList<String> customizeConverter) {
         this.customizeConverter = customizeConverter;
+    }
+
+    public String getJournal() {
+        return journal;
+    }
+
+    public void setJournal(String journal) {
+        this.journal = journal;
     }
 }

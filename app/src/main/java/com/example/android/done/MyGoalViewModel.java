@@ -6,6 +6,7 @@ public class MyGoalViewModel extends ViewModel {
 
     private Goal myGoal;
     private int myId = 0;
+    private String myJournal = "";
 
 
     public Goal getMyGoal() {
@@ -22,5 +23,13 @@ public class MyGoalViewModel extends ViewModel {
 
     public void setMyId(int myId) {
         this.myId = myId;
+    }
+
+    public String getMyJournal() {
+        return myJournal;
+    }
+
+    public void setMyJournal(String myJournal) {
+        this.myJournal = myJournal;
     }
 }

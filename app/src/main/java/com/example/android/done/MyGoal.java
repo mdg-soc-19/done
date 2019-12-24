@@ -64,6 +64,13 @@ public class MyGoal extends Fragment {
                 navController.navigate(R.id.action_MyGoal_to_EditGoal);
             }
         });
+        Button journal = view.findViewById(R.id.journal_button);
+        journal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_MyGoal_to_MyJournal);
+            }
+        });
 
 
     }

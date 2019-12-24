@@ -13,9 +13,18 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="466" />
-                            <option name="y" value="351" />
+                            <option name="x" value="494" />
+                            <option name="y" value="207" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_EditGoal_to_MyGoal">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -62,6 +71,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_MyGoal_to_MyJournal">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -79,6 +93,27 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_MyGoalsHome_to_MyGoal">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="MyJournal">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="500" />
+                            <option name="y" value="559" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_MyJournal_to_MyGoal">
                               <value>
                                 <LayoutPositions />
                               </value>

@@ -95,6 +95,9 @@
         <action
             android:id="@+id/action_MyGoal_to_EditGoal"
             app:destination="@id/EditGoal" />
+        <action
+            android:id="@+id/action_MyGoal_to_MyJournal"
+            app:destination="@id/MyJournal" />
     </fragment>
 
     <fragment
@@ -104,6 +107,16 @@
         tools:layout="@layout/fragment_edit_goal" >
         <action
             android:id="@+id/action_EditGoal_to_MyGoal"
+            app:destination="@id/MyGoal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyJournal"
+        android:name="com.example.android.done.MyJournal"
+        android:label="fragment_my_journal"
+        tools:layout="@layout/fragment_my_journal" >
+        <action
+            android:id="@+id/action_MyJournal_to_MyGoal"
             app:destination="@id/MyGoal" />
     </fragment>
 
