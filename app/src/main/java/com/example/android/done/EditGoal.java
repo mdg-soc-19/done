@@ -23,6 +23,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -256,12 +257,31 @@ public class EditGoal extends Fragment {
                 updatedGoal.setId(myGoal.getId());
                 mViewModel.update(updatedGoal);
                 myGoalViewModel.setMyGoal(updatedGoal);
+                clearFields();
                 navController.navigate(R.id.action_EditGoal_to_MyGoal);
+                Toast.makeText(getContext() , "Changes saved" , Toast.LENGTH_SHORT).show();
 
             }
         });
 
 
+    }
+
+
+
+
+
+    private void clearFields() {
+        ArrayList<String> days = new ArrayList<>();
+        for (int i = 0; i < 7; i++) {
+            days.add("-1");
+        }
+        sharedViewModel.setGoalName("");
+        sharedViewModel.setMotivation("");
+        sharedViewModel.setDeadline("");
+        sharedViewModel.setDays(days);
+        sharedViewModel.setHour(0);
+        sharedViewModel.setMinute(0);
     }
 
 }

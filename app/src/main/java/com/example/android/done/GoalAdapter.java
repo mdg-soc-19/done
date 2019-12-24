@@ -43,7 +43,18 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
 
         Goal currentGoal = goals.get(position);
         holder.textViewGoalName.setText(currentGoal.getGoalName());
-        holder.textViewDeadline.setText(currentGoal.getDeadline());
+        if(!currentGoal.getDeadline().trim().isEmpty())
+        {
+            String date = currentGoal.getDeadline();
+            String[] parts = date.split("/");
+
+            int day = Integer.parseInt(parts[0]);
+            int month = Integer.parseInt(parts[1]);
+            int year = Integer.parseInt(parts[2]);
+
+            String deadline = day+ "/" + (month +1 )+ "/" + year;
+            holder.textViewDeadline.setText(deadline);
+        }
         holder.textViewPriority.setText(currentGoal.getPriority());
 
 
