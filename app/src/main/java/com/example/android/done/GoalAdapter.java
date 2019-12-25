@@ -67,11 +67,32 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
             int cMonth = Integer.parseInt(cParts[1]);
 
             int cYear = Integer.parseInt(cParts[2]);
+            Log.e("day" , String.valueOf(day));
+            Log.e("cday" , String.valueOf(cDay));
+            Log.e("month" , String.valueOf(month));
+            Log.e("cmonth" , String.valueOf(cMonth));
+            Log.e("year" , String.valueOf(year));
+            Log.e("cYear" , String.valueOf(cYear));
 
-            if (year <= cYear) {
-                if (month <= cMonth) {
-                    if (day < cDay) {
+
+            if (year<cYear)
+            {
+                holder.imageViewStatus.setImageResource(R.drawable.done);
+
+            }
+            if (year==cYear)
+            {
+                if (month+1<cMonth)
+                {
+                    holder.imageViewStatus.setImageResource(R.drawable.done);
+
+                }
+                if (month+1==cMonth)
+                {
+                    if (day<cDay)
+                    {
                         holder.imageViewStatus.setImageResource(R.drawable.done);
+
                     }
                 }
             }

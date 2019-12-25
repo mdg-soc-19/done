@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -76,6 +77,8 @@ public class HomePage extends Fragment {
                 } else if (day == 7) {
                     today = "SATURDAY";
                 }
+
+
                 List<Goal> todaysTasks = new ArrayList<>();
                 for (int i = 0; i < goals.size(); i++) {
                     if (goals.get(i).getCustomizeConverter().contains(today)) {
