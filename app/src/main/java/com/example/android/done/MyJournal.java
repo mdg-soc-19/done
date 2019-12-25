@@ -53,8 +53,7 @@ public class MyJournal extends Fragment {
                 myGoal.setJournal(updatedJournalEntry);
                 mViewModel.update(myGoal);
                 navController.navigate(R.id.action_MyJournal_to_MyGoal);
-                Toast.makeText(getContext() , "Journal entry saved" , Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(getContext(), "Journal entry saved", Toast.LENGTH_SHORT).show();
 
 
             }

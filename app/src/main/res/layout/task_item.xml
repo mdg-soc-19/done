@@ -46,11 +46,11 @@
             android:id="@+id/task_status"
             android:layout_width="50dp"
             android:layout_height="40dp"
+            android:layout_below="@+id/task_priority"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/task_priority"
-            android:text="Done"
-            android:src="@drawable/pending"/>
+            android:src="@drawable/pending"
+            android:text="Done" />
 
 
     </RelativeLayout>

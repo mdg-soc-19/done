@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
-@Entity (tableName = "goal_table")
+@Entity(tableName = "goal_table")
 public class Goal {
 
     @PrimaryKey(autoGenerate = true)
@@ -23,11 +23,11 @@ public class Goal {
 
     private int minute;
 
-    private ArrayList<String > customizeConverter;
+    private ArrayList<String> customizeConverter;
 
     private String journal;
 
-    public Goal(String goalName, String motivation, String priority, String deadline, int hour, int minute , ArrayList<String > customizeConverter) {
+    public Goal(String goalName, String motivation, String priority, String deadline, int hour, int minute, ArrayList<String> customizeConverter) {
         this.goalName = goalName;
         this.motivation = motivation;
         this.priority = priority;

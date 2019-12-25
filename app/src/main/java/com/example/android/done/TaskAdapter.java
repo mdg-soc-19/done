@@ -23,13 +23,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
         itemLayout = layoutId;
 
 
-
     }
 
     @NonNull
     @Override
     public TaskHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_item,parent,false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_item, parent, false);
         return new TaskHolder(itemView);
     }
 
@@ -40,9 +39,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
         holder.goalName.setText(currentGoal.getGoalName());
         holder.motivation.setText(currentGoal.getMotivation());
         holder.priority.setText(currentGoal.getPriority());
-
-
-
 
 
     }
@@ -64,24 +60,23 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
     }
 
 
-
     class TaskHolder extends RecyclerView.ViewHolder {
 
-       private TextView goalName;
-       private TextView priority;
-       private TextView motivation;
-       private ImageView status;
+        private TextView goalName;
+        private TextView priority;
+        private TextView motivation;
+        private ImageView status;
 
 
-       public TaskHolder(@NonNull View itemView) {
-           super(itemView);
-           goalName = itemView.findViewById(R.id.task_goal_name);
-           priority = itemView.findViewById(R.id.task_priority);
-           motivation = itemView.findViewById(R.id.task_motivation);
-           status = itemView.findViewById(R.id.task_status);
+        public TaskHolder(@NonNull View itemView) {
+            super(itemView);
+            goalName = itemView.findViewById(R.id.task_goal_name);
+            priority = itemView.findViewById(R.id.task_priority);
+            motivation = itemView.findViewById(R.id.task_motivation);
+            status = itemView.findViewById(R.id.task_status);
 
 
-       }
+        }
 
 
     }

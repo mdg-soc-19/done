@@ -49,11 +49,9 @@ public class Motivation extends Fragment {
             @Override
             public void onClick(View v) {
                 String input = motivation.getText().toString();
-                if(input.trim().isEmpty())
-                {
-                    Toast.makeText(getContext(),"Please enter your motivation" , Toast.LENGTH_SHORT).show();
-                }
-                else {
+                if (input.trim().isEmpty()) {
+                    Toast.makeText(getContext(), "Please enter your motivation", Toast.LENGTH_SHORT).show();
+                } else {
 
                     viewModel.setMotivation(input);
 

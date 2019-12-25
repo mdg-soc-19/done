@@ -19,23 +19,19 @@ public class GoalViewModel extends AndroidViewModel {
         allGoals = repository.getAllGoals();
     }
 
-    public void insert (Goal goal)
-    {
+    public void insert(Goal goal) {
         repository.insert(goal);
     }
 
-    public void update (Goal goal)
-    {
+    public void update(Goal goal) {
         repository.update(goal);
     }
 
-    public void delete (Goal goal)
-    {
+    public void delete(Goal goal) {
         repository.delete(goal);
     }
 
-    public LiveData<List<Goal>> getAllGoals()
-    {
+    public LiveData<List<Goal>> getAllGoals() {
         return allGoals;
     }
 }

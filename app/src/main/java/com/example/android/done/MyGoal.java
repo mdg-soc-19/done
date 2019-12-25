@@ -24,15 +24,13 @@ import android.widget.Toast;
 public class MyGoal extends Fragment {
 
 
-   private TextView myGoalName;
-   private TextView myDeadline;
-   private TextView myPriority;
-   private TextView myMotivation;
-   MyGoalViewModel myGoalViewModel;
-   private Goal goal;
-   NavController navController;
-
-
+    private TextView myGoalName;
+    private TextView myDeadline;
+    private TextView myPriority;
+    private TextView myMotivation;
+    MyGoalViewModel myGoalViewModel;
+    private Goal goal;
+    NavController navController;
 
 
     @Override
@@ -54,8 +52,7 @@ public class MyGoal extends Fragment {
         goal = myGoalViewModel.getMyGoal();
         myGoalName.setText(goal.getGoalName());
         myPriority.setText(goal.getPriority());
-        if(!goal.getDeadline().trim().isEmpty())
-        {
+        if (!goal.getDeadline().trim().isEmpty()) {
             String date = goal.getDeadline();
             String[] parts = date.split("/");
 
@@ -63,7 +60,7 @@ public class MyGoal extends Fragment {
             int month = Integer.parseInt(parts[1]);
             int year = Integer.parseInt(parts[2]);
 
-            String dealine1 = day+ "/" + (month +1 )+ "/" + year;
+            String dealine1 = day + "/" + (month + 1) + "/" + year;
             myDeadline.setText(dealine1);
         }
         myMotivation.setText(goal.getMotivation());

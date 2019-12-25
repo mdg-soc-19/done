@@ -43,7 +43,6 @@ public class HomePage extends Fragment {
     }
 
 
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -53,11 +52,9 @@ public class HomePage extends Fragment {
         recyclerSetup();
 
 
-
     }
 
-    private void observerSetup()
-    {
+    private void observerSetup() {
         mViewModel.getAllGoals().observe(this, new Observer<List<Goal>>() {
             @Override
             public void onChanged(List<Goal> goals) {
@@ -66,35 +63,22 @@ public class HomePage extends Fragment {
                 Calendar calendar = Calendar.getInstance();
                 int day = calendar.get(Calendar.DAY_OF_WEEK);
                 String today = "SUNDAY";
-                if (day==2)
-                {
+                if (day == 2) {
                     today = "MONDAY";
-                }
-                else if (day == 3)
-                {
+                } else if (day == 3) {
                     today = "TUESDAY";
-                }
-                else if (day == 4)
-                {
+                } else if (day == 4) {
                     today = "WEDNESDAY";
-                }
-                else if (day == 5)
-                {
+                } else if (day == 5) {
                     today = "THURSDAY";
-                }
-                else if (day == 6)
-                {
+                } else if (day == 6) {
                     today = "FRIDAY";
-                }
-                else if (day == 7)
-                {
+                } else if (day == 7) {
                     today = "SATURDAY";
                 }
                 List<Goal> todaysTasks = new ArrayList<>();
-                for (int i =0 ;i<goals.size() ; i++)
-                {
-                    if (goals.get(i).getCustomizeConverter().contains(today))
-                    {
+                for (int i = 0; i < goals.size(); i++) {
+                    if (goals.get(i).getCustomizeConverter().contains(today)) {
                         todaysTasks.add(goals.get(i));
                     }
                 }
@@ -104,8 +88,7 @@ public class HomePage extends Fragment {
         });
     }
 
-    private void recyclerSetup()
-    {
+    private void recyclerSetup() {
 
         adapter = new TaskAdapter(R.layout.task_item);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
