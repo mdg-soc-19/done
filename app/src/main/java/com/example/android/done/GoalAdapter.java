@@ -1,8 +1,10 @@
 package com.example.android.done;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import com.example.android.done.model.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
@@ -23,7 +26,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
     private OnGoalListener mOnGoalListener;
 
 
-    public GoalAdapter(int layoutId , OnGoalListener onGoalListener) {
+    public GoalAdapter(int layoutId, OnGoalListener onGoalListener) {
         itemLayout = layoutId;
         this.mOnGoalListener = onGoalListener;
 
@@ -35,7 +38,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
     public GoalHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_item, parent, false);
-        return new GoalHolder(itemView ,mOnGoalListener);
+        return new GoalHolder(itemView, mOnGoalListener);
     }
 
     @Override
@@ -43,8 +46,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
 
         Goal currentGoal = goals.get(position);
         holder.textViewGoalName.setText(currentGoal.getGoalName());
-        if(!currentGoal.getDeadline().trim().isEmpty())
-        {
+        if (!currentGoal.getDeadline().trim().isEmpty()) {
             String date = currentGoal.getDeadline();
             String[] parts = date.split("/");
 
@@ -52,8 +54,28 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
             int month = Integer.parseInt(parts[1]);
             int year = Integer.parseInt(parts[2]);
 
-            String deadline = day+ "/" + (month +1 )+ "/" + year;
+            String deadline = day + "/" + (month + 1) + "/" + year;
             holder.textViewDeadline.setText(deadline);
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Calendar c = Calendar.getInstance();
+            String currentDate = sdf.format(c.getTime());
+            String[] cParts = currentDate.split("/");
+
+            int cDay = Integer.parseInt(cParts[0]);
+
+            int cMonth = Integer.parseInt(cParts[1]);
+
+            int cYear = Integer.parseInt(cParts[2]);
+
+            if (year <= cYear) {
+                if (month <= cMonth) {
+                    if (day < cDay) {
+                        holder.imageViewStatus.setImageResource(R.drawable.done);
+                    }
+                }
+            }
+
         }
         holder.textViewPriority.setText(currentGoal.getPriority());
 
@@ -93,6 +115,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
         private TextView textViewDeadline;
         private TextView textViewPriority;
         OnGoalListener onGoalListener;
+        private ImageView imageViewStatus;
 
 
         public GoalHolder(@NonNull View itemView, OnGoalListener onGoalListener) {
@@ -100,6 +123,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
             textViewGoalName = itemView.findViewById(R.id.goa_name_text_view);
             textViewDeadline = itemView.findViewById(R.id.deadline_text_view);
             textViewPriority = itemView.findViewById(R.id.priority_text_view);
+            imageViewStatus = itemView.findViewById(R.id.goal_status);
 
             this.onGoalListener = onGoalListener;
             itemView.setOnClickListener(this);
