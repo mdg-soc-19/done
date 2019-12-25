@@ -1,9 +1,11 @@
 package com.example.android.done;
 
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +21,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
 
     public TaskAdapter(int layoutId) {
         itemLayout = layoutId;
+
 
 
     }
@@ -40,6 +43,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
 
 
 
+
+
     }
 
     @Override
@@ -53,17 +58,33 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
         notifyDataSetChanged();
     }
 
-    class TaskHolder extends RecyclerView.ViewHolder{
+
+    public Goal getTaskAt(int position) {
+        return goals.get(position);
+    }
+
+
+
+    class TaskHolder extends RecyclerView.ViewHolder {
 
        private TextView goalName;
        private TextView priority;
        private TextView motivation;
+       private ImageView status;
+
 
        public TaskHolder(@NonNull View itemView) {
            super(itemView);
            goalName = itemView.findViewById(R.id.task_goal_name);
            priority = itemView.findViewById(R.id.task_priority);
            motivation = itemView.findViewById(R.id.task_motivation);
+           status = itemView.findViewById(R.id.task_status);
+
+
        }
-   }
+
+
+    }
+
+
 }

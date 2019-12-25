@@ -10,14 +10,17 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp"
+        >
+
 
         <TextView
             android:id="@+id/task_goal_name"
             android:text="Goal Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            />
 
         <TextView
             android:id="@+id/task_motivation"
@@ -27,6 +30,7 @@
             android:layout_below="@+id/task_goal_name"
             android:paddingTop="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
             />
 
         <TextView
@@ -38,7 +42,15 @@
             android:text="A"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
-
+        <ImageView
+            android:id="@+id/task_status"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/task_priority"
+            android:text="Done"
+            android:src="@drawable/pending"/>
 
 
     </RelativeLayout>

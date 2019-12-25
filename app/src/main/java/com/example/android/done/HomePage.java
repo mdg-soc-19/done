@@ -1,5 +1,6 @@
 package com.example.android.done;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,6 +51,8 @@ public class HomePage extends Fragment {
         recyclerView = view.findViewById(R.id.home_page_recycler_view);
         observerSetup();
         recyclerSetup();
+
+
 
     }
 
@@ -107,4 +111,6 @@ public class HomePage extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
     }
+
+
 }
