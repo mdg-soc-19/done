@@ -1,0 +1,69 @@
+package com.example.android.done;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
+
+    private List<Goal> goals = new ArrayList<>();
+    private int itemLayout;
+
+    public TaskAdapter(int layoutId) {
+        itemLayout = layoutId;
+
+
+    }
+
+    @NonNull
+    @Override
+    public TaskHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_item,parent,false);
+        return new TaskHolder(itemView);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull TaskHolder holder, int position) {
+
+        Goal currentGoal = goals.get(position);
+        holder.goalName.setText(currentGoal.getGoalName());
+        holder.motivation.setText(currentGoal.getMotivation());
+        holder.priority.setText(currentGoal.getPriority());
+
+
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return goals.size();
+    }
+
+    public void setTasks(List<Goal> goals) {
+
+        this.goals = goals;
+        notifyDataSetChanged();
+    }
+
+    class TaskHolder extends RecyclerView.ViewHolder{
+
+       private TextView goalName;
+       private TextView priority;
+       private TextView motivation;
+
+       public TaskHolder(@NonNull View itemView) {
+           super(itemView);
+           goalName = itemView.findViewById(R.id.task_goal_name);
+           priority = itemView.findViewById(R.id.task_priority);
+           motivation = itemView.findViewById(R.id.task_motivation);
+       }
+   }
+}

@@ -6,27 +6,39 @@
     android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp">
 
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <CheckBox
-            android:id="@+id/task_check_box"
+        <TextView
+            android:id="@+id/task_goal_name"
             android:text="Goal Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
+        <TextView
+            android:id="@+id/task_motivation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motivation"
+            android:layout_below="@+id/task_goal_name"
+            android:paddingTop="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            />
 
         <TextView
-            android:id="@+id/priority_text_view"
+            android:id="@+id/task_priority"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:text="A"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+
 
 
     </RelativeLayout>
