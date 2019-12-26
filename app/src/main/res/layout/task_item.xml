@@ -33,24 +33,17 @@
 
 
         <ImageView
+            android:id="@+id/task_status"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/task_priority"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="-6dp"
             android:layout_marginEnd="-11dp"
             android:layout_marginRight="-11dp"
-            android:src="@drawable/options" />
+            android:src="@drawable/dots" />
 
-        <TextView
-            android:id="@+id/task_priority"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="A"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
 
 
     </RelativeLayout>

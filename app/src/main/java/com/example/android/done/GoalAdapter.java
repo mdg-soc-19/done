@@ -59,35 +59,10 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
             String deadline = day + "/" + (month + 1) + "/" + year;
             holder.textViewDeadline.setText(deadline);
 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            Calendar c = Calendar.getInstance();
-            String currentDate = sdf.format(c.getTime());
-            String[] cParts = currentDate.split("/");
-
-            int cDay = Integer.parseInt(cParts[0]);
-
-            int cMonth = Integer.parseInt(cParts[1]);
-
-            int cYear = Integer.parseInt(cParts[2]);
-
-
-            if (year < cYear) {
-                holder.imageViewStatus.setImageResource(R.drawable.done);
-
-            }
-            if (year == cYear) {
-                if (month + 1 < cMonth) {
-                    holder.imageViewStatus.setImageResource(R.drawable.done);
-
-                }
-                if (month + 1 == cMonth) {
-                    if (day < cDay) {
-                        holder.imageViewStatus.setImageResource(R.drawable.done);
-
-                    }
-                }
-            }
-
+        }
+        if (currentGoal.getStatus()==1)
+        {
+            holder.imageViewStatus.setImageResource(R.drawable.done);
         }
         holder.textViewPriority.setText(currentGoal.getPriority());
 
