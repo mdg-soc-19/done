@@ -31,6 +31,7 @@ public class Goal {
 
     private int status = 0;
 
+
     public Goal(String goalName, String motivation, String priority, String deadline, int hour, int minute, ArrayList<String> customizeConverter) {
         this.goalName = goalName;
         this.motivation = motivation;
@@ -39,7 +40,7 @@ public class Goal {
         this.hour = hour;
         this.minute = minute;
         this.customizeConverter = customizeConverter;
-        setStatus1();
+
     }
 
     public int getId() {
@@ -114,7 +115,7 @@ public class Goal {
         this.journal = journal;
     }
 
-    private void setStatus1()
+    public void setStatus1()
     {
         String date = deadline;
         String[] parts = date.split("/");
@@ -158,4 +159,6 @@ public class Goal {
     public void setStatus(int status) {
         this.status = status;
     }
+
+
 }

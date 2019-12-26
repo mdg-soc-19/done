@@ -60,6 +60,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
             holder.textViewDeadline.setText(deadline);
 
         }
+        currentGoal.setStatus1();
         if (currentGoal.getStatus()==1)
         {
             holder.imageViewStatus.setImageResource(R.drawable.done);

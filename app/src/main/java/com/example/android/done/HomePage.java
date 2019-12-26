@@ -82,6 +82,7 @@ public class HomePage extends Fragment {
 
                 List<Goal> todaysTasks = new ArrayList<>();
                 for (int i = 0; i < goals.size(); i++) {
+                    goals.get(i).setStatus1();
                     if (goals.get(i).getCustomizeConverter().contains(today)&&goals.get(i).getStatus()==0) {
                         todaysTasks.add(goals.get(i));
                     }
