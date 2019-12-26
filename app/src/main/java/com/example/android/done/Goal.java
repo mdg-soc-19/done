@@ -31,6 +31,10 @@ public class Goal {
 
     private int status = 0;
 
+    private int taskStatus = 0;
+
+    private int doneTask = 0;
+
 
     public Goal(String goalName, String motivation, String priority, String deadline, int hour, int minute, ArrayList<String> customizeConverter) {
         this.goalName = goalName;
@@ -160,5 +164,19 @@ public class Goal {
         this.status = status;
     }
 
+    public int getTaskStatus() {
+        return taskStatus;
+    }
 
+    public void setTaskStatus(int taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
+    public int getDoneTask() {
+        return doneTask;
+    }
+
+    public void setDoneTask(int doneTask) {
+        this.doneTask = doneTask;
+    }
 }

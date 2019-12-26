@@ -2,6 +2,7 @@ package com.example.android.done;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -21,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ import java.util.Calendar;
 import java.util.List;
 
 
-public class HomePage extends Fragment {
+public class HomePage extends Fragment implements TaskAdapter.OnTaskListener {
 
     NavController navController;
     private TaskAdapter adapter;
@@ -49,6 +51,8 @@ public class HomePage extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
         recyclerView = view.findViewById(R.id.home_page_recycler_view);
+        navController = Navigation.findNavController(view);
+
         observerSetup();
         recyclerSetup();
 
@@ -95,10 +99,56 @@ public class HomePage extends Fragment {
 
     private void recyclerSetup() {
 
-        adapter = new TaskAdapter(R.layout.task_item);
+        adapter = new TaskAdapter(R.layout.task_item , this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
     }
 
 
+    @Override
+    public void onTaskClick(int position) {
+
+        Goal goalTaskSelected = adapter.getTaskAt(position);
+        AskOption(position , goalTaskSelected);
+
+
+    }
+
+    private void AskOption( int position , Goal goal)
+    {
+        CharSequence options[] = new CharSequence[] {"Mark task as done" , "Goal Details"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setCancelable(false);
+        builder.setTitle("Select your option:");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(which == 1)
+                {
+                    navController.navigate(R.id.action_HomePage_to_MyGoalsHome);
+                }
+
+                if(which == 0)
+                {
+
+                    goal.setTaskStatus(0);  //resetting previous day taskStatus
+                    goal.setDoneTask(goal.getDoneTask()+1);  //increasing no. of days the task done by 1
+                    goal.setTaskStatus(1); //setting taskStatus to 1
+                    mViewModel.update(goal);
+                    Toast.makeText(getContext(), "Task marked as completed", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+        builder.setNegativeButton("Cancel" , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+
+
+    }
 }
