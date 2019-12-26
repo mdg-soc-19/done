@@ -32,4 +32,5 @@ public class MyGoalViewModel extends ViewModel {
     public void setMyJournal(String myJournal) {
         this.myJournal = myJournal;
     }
+
 }

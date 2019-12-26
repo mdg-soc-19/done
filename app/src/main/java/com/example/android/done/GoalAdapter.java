@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.done.model.Date;
@@ -43,6 +44,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull GoalHolder holder, int position) {
+
 
         Goal currentGoal = goals.get(position);
         holder.textViewGoalName.setText(currentGoal.getGoalName());
@@ -137,6 +139,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
 
             this.onGoalListener = onGoalListener;
             itemView.setOnClickListener(this);
+
 
 
         }

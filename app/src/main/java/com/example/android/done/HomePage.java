@@ -79,6 +79,7 @@ public class HomePage extends Fragment {
                 }
 
 
+
                 List<Goal> todaysTasks = new ArrayList<>();
                 for (int i = 0; i < goals.size(); i++) {
                     if (goals.get(i).getCustomizeConverter().contains(today)) {
