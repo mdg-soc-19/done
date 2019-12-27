@@ -232,6 +232,7 @@ public class EditGoal extends Fragment {
                 int inputMinute = sharedViewModel.getMinute();
 
                 Goal updatedGoal = new Goal(inputGoalName, inputMotivation, inputPriority, inputDeadline, inputHour, inputMinute, inputDays);
+                updatedGoal.setDoneTask(myGoal.getDoneTask());
                 updatedGoal.setId(myGoal.getId());
                 mViewModel.update(updatedGoal);
                 myGoalViewModel.setMyGoal(updatedGoal);
