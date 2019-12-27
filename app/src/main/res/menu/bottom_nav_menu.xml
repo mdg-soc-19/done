@@ -19,6 +19,7 @@
         android:icon="@drawable/calendar"
         android:title="Calendar" />
     <item
+        android:id="@+id/MyProgress"
         android:icon="@drawable/ic_person_black_24dp"
-        android:title="MY Profile" />
+        android:title="My Progress" />
 </menu>

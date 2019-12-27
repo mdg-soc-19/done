@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_HomePage_to_MyGoalsHome"
             app:destination="@id/MyGoalsHome" />
+        <action
+            android:id="@+id/action_HomePage_to_MyProgress"
+            app:destination="@id/MyProgress" />
     </fragment>
     <fragment
         android:id="@+id/goalName"
@@ -118,6 +121,13 @@
         <action
             android:id="@+id/action_MyJournal_to_MyGoal"
             app:destination="@id/MyGoal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyProgress"
+        android:name="com.example.android.done.MyProgress"
+        android:label="fragment_my_progress"
+        tools:layout="@layout/fragment_my_progress" >
     </fragment>
 
 
