@@ -20,6 +20,6 @@
         android:title="Calendar" />
     <item
         android:id="@+id/MyProgress"
-        android:icon="@drawable/ic_person_black_24dp"
+        android:icon="@drawable/stats"
         android:title="My Progress" />
 </menu>
