@@ -77,6 +77,8 @@ public class MyProgress extends Fragment {
         pieChart.getDescription().setEnabled(false);
         pieChart.setDragDecelerationFrictionCoef(0.99f);
         pieChart.setExtraOffsets(5,10,5,10);
+        pieChart.setNoDataText("No goal available");
+        pieChart.setNoDataTextColor(Color.BLACK);
         List<PieEntry> entries = new ArrayList<>();
         entries.add(new PieEntry(doneGoals, "Done Goals"));
         entries.add(new PieEntry(unDoneGoals, "Undone Goals"));
