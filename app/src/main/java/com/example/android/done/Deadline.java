@@ -69,6 +69,22 @@ public class Deadline extends Fragment {
             long milliTime = calendar.getTimeInMillis();
             calendarView.setDate(milliTime, true, true);
         }
+        else
+        {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Calendar c = Calendar.getInstance();
+            String currentDate = sdf.format(c.getTime());
+            String[] cParts = currentDate.split("/");
+
+            int cDay = Integer.parseInt(cParts[0]);
+
+            int cMonth = Integer.parseInt(cParts[1]);
+
+            int cYear = Integer.parseInt(cParts[2]);
+            String deadline = cDay + "/" + cMonth + "/" + cYear;
+
+            viewModel.setDeadline(deadline);
+        }
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
