@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
     private int itemLayout;
     private OnTaskListener mOnTaskListener;
 
+
     public TaskAdapter(int layoutId , OnTaskListener onTaskListener) {
         itemLayout = layoutId;
         this.mOnTaskListener = onTaskListener;
@@ -32,6 +34,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
     @NonNull
     @Override
     public TaskHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_item, parent, false);
         return new TaskHolder(itemView , mOnTaskListener);
     }
@@ -39,13 +42,28 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
     @Override
     public void onBindViewHolder(@NonNull TaskHolder holder, int position) {
 
+
         Goal currentGoal = goals.get(position);
         holder.goalName.setText(currentGoal.getGoalName());
         holder.motivation.setText(currentGoal.getMotivation());
+
         if (currentGoal.getTaskStatus()==1)
         {
-            holder.status.setImageResource(R.drawable.done);
+            holder.checkBox.setChecked(true);
         }
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    mOnTaskListener.onTaskChecked(position , true);
+                }
+                else
+                {
+                    mOnTaskListener.onTaskChecked(position , false);
+                }
+            }
+        });
 
 
     }
@@ -72,7 +90,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
         private TextView goalName;
         private TextView motivation;
         private ImageView task_status;
-        private ImageView status;
+        private CheckBox checkBox;
         private OnTaskListener onTaskListener;
 
 
@@ -81,7 +99,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
             goalName = itemView.findViewById(R.id.task_goal_name);
             motivation = itemView.findViewById(R.id.task_motivation);
             task_status = itemView.findViewById(R.id.task_status);
-            status = itemView.findViewById(R.id.status);
+            checkBox = itemView.findViewById(R.id.task_check);
             this.onTaskListener = onTaskListener;
             itemView.setOnClickListener(this);
 
@@ -97,6 +115,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
     public interface OnTaskListener {
 
         void onTaskClick (int position);
+        void onTaskChecked (int position , boolean isChecked);
     }
 
 

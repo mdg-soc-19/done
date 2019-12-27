@@ -109,46 +109,55 @@ public class HomePage extends Fragment implements TaskAdapter.OnTaskListener {
     public void onTaskClick(int position) {
 
         Goal goalTaskSelected = adapter.getTaskAt(position);
-        AskOption(position , goalTaskSelected);
+        AskOption(position , goalTaskSelected).show();
 
 
     }
 
-    private void AskOption( int position , Goal goal)
-    {
-        CharSequence options[] = new CharSequence[] {"Mark task as done" , "Goal Details"};
+    @Override
+    public void onTaskChecked(int position, boolean isChecked) {
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setCancelable(false);
-        builder.setTitle("Select your option:");
-        builder.setItems(options, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if(which == 1)
-                {
-                    navController.navigate(R.id.action_HomePage_to_MyGoalsHome);
-                }
+        Goal goalTaskSelected = adapter.getTaskAt(position);
+        if (isChecked)
+        {
+            goalTaskSelected.setTaskStatus(1); //task marked as done
+            goalTaskSelected.setDoneTask(goalTaskSelected.getDoneTask()+1);  //task for the specific goal ++
+            mViewModel.update(goalTaskSelected);
+        }
+        if (!isChecked)
+        {
+            goalTaskSelected.setTaskStatus(0);  //task marked as undone
+            goalTaskSelected.setDoneTask(goalTaskSelected.getDoneTask()-1);  //task for the specific goal --
+            mViewModel.update(goalTaskSelected);
+        }
+    }
 
-                if(which == 0)
-                {
-
-                    goal.setTaskStatus(0);  //resetting previous day taskStatus
-                    goal.setDoneTask(goal.getDoneTask()+1);  //increasing no. of days the task done by 1
-                    goal.setTaskStatus(1); //setting taskStatus to 1
-                    mViewModel.update(goal);
-                    Toast.makeText(getContext(), "Task marked as completed", Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });
-        builder.setNegativeButton("Cancel" , new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
+    private AlertDialog AskOption( int position , Goal goal) {
+        AlertDialog confirmationDialogBox = new AlertDialog.Builder(getActivity())
+                // set message, title, and icon
+                .setTitle("Goal Information")
+                .setMessage("Go to MyGoals page")
 
 
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+
+                        navController.navigate(R.id.action_HomePage_to_MyGoalsHome);
+                        dialog.dismiss();
+                    }
+
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+
+                    }
+                })
+                .create();
+
+        return confirmationDialogBox;
     }
 }
