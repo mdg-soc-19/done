@@ -171,8 +171,7 @@ public class EditGoal extends Fragment {
                 String inputMotivation = sharedViewModel.getMotivation();
                 sharedViewModel.setPriority(editPriority.getSelectedItem().toString());
                 String inputPriority = sharedViewModel.getPriority();
-                if(!sharedViewModel.getDeadline().trim().isEmpty())
-                {
+                if (!sharedViewModel.getDeadline().trim().isEmpty()) {
                     String date = sharedViewModel.getDeadline();
                     String[] parts = date.split("/");
 
@@ -186,89 +185,66 @@ public class EditGoal extends Fragment {
                     calendar.set(Calendar.DAY_OF_MONTH, day);
 
                     long milliTime = calendar.getTimeInMillis();
-                    editDeadline.setDate(milliTime , true , true);
+                    editDeadline.setDate(milliTime, true, true);
                 }
                 String inputDeadline = sharedViewModel.getDeadline();
-                ArrayList<String > inputdays = new ArrayList<>();
-                if (editMonday.isChecked())
-                {
+                ArrayList<String> inputdays = new ArrayList<>();
+                if (editMonday.isChecked()) {
                     inputdays.add("MONDAY");
-                }
-                else
-                {
+                } else {
                     inputdays.add("-1");
                 }
-                if (editTuesday.isChecked())
-                {
+                if (editTuesday.isChecked()) {
                     inputdays.add("TUESDAY");
-                }
-                else
-                {
+                } else {
                     inputdays.add("-1");
                 }
-                if (editWednesday.isChecked())
-                {
+                if (editWednesday.isChecked()) {
                     inputdays.add("WEDNESDAY");
-                }
-                else
-                {
+                } else {
                     inputdays.add("-1");
                 }
-                if (editThursday.isChecked())
-                {
+                if (editThursday.isChecked()) {
                     inputdays.add("THURSDAY");
-                }
-                else
-                {
+                } else {
                     inputdays.add("-1");
                 }
-                if (editFriday.isChecked())
-                {
+                if (editFriday.isChecked()) {
                     inputdays.add("FRIDAY");
-                }
-                else
-                {
+                } else {
                     inputdays.add("-1");
                 }
-                if (editSaturday.isChecked())
-                {
+                if (editSaturday.isChecked()) {
                     inputdays.add("SATURDAY");
-                }
-                else
-                {
+                } else {
                     inputdays.add("-1");
                 }
-                if (editSunday.isChecked())
-                {
+                if (editSunday.isChecked()) {
                     inputdays.add("SUNDAY");
-                }
-                else
-                {
+                } else {
                     inputdays.add("-1");
                 }
                 sharedViewModel.setDays(inputdays);
 
-                ArrayList<String > inputDays = sharedViewModel.getDays();
+                ArrayList<String> inputDays = sharedViewModel.getDays();
 
                 int inputHour = sharedViewModel.getHour();
                 int inputMinute = sharedViewModel.getMinute();
 
-                Goal updatedGoal = new Goal(inputGoalName,inputMotivation,inputPriority,inputDeadline,inputHour,inputMinute,inputDays);
+                Goal updatedGoal = new Goal(inputGoalName, inputMotivation, inputPriority, inputDeadline, inputHour, inputMinute, inputDays);
+                updatedGoal.setDoneTask(myGoal.getDoneTask());
                 updatedGoal.setId(myGoal.getId());
                 mViewModel.update(updatedGoal);
                 myGoalViewModel.setMyGoal(updatedGoal);
                 clearFields();
                 navController.navigate(R.id.action_EditGoal_to_MyGoal);
-                Toast.makeText(getContext() , "Changes saved" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Changes saved", Toast.LENGTH_SHORT).show();
 
             }
         });
 
 
     }
-
-
-
 
 
     private void clearFields() {

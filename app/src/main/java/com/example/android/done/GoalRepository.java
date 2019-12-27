@@ -13,45 +13,39 @@ public class GoalRepository {
     private GoalDao goalDao;
     private LiveData<List<Goal>> allGoals;
 
-    public GoalRepository(Application application)
-    {
+    public GoalRepository(Application application) {
         GoalDatabase database = GoalDatabase.getInstance(application);
         goalDao = database.goalDao();
         allGoals = goalDao.getAllGoals();
     }
 
-    public void insert(Goal goal)
-    {
+    public void insert(Goal goal) {
         new InsertGoalAsyncTask(goalDao).execute(goal);
 
     }
 
-    public void update(Goal goal)
-    {
+    public void update(Goal goal) {
         new UpdateGoalAsyncTask(goalDao).execute(goal);
 
 
     }
 
-    public void delete(Goal goal)
-    {
+    public void delete(Goal goal) {
         new DeleteGoalAsyncTask(goalDao).execute(goal);
 
     }
 
-    public LiveData<List<Goal>> getAllGoals()
-    {
+    public LiveData<List<Goal>> getAllGoals() {
         return allGoals;
     }
 
-    private static class InsertGoalAsyncTask extends AsyncTask<Goal , Void , Void>
-    {
+    private static class InsertGoalAsyncTask extends AsyncTask<Goal, Void, Void> {
         GoalDao goalDao;
 
-        private InsertGoalAsyncTask(GoalDao goalDao)
-        {
+        private InsertGoalAsyncTask(GoalDao goalDao) {
             this.goalDao = goalDao;
         }
+
         @Override
         protected Void doInBackground(Goal... goals) {
             goalDao.insert(goals[0]);
@@ -59,14 +53,13 @@ public class GoalRepository {
         }
     }
 
-    private static class DeleteGoalAsyncTask extends AsyncTask<Goal , Void , Void>
-    {
+    private static class DeleteGoalAsyncTask extends AsyncTask<Goal, Void, Void> {
         GoalDao goalDao;
 
-        private DeleteGoalAsyncTask(GoalDao goalDao)
-        {
+        private DeleteGoalAsyncTask(GoalDao goalDao) {
             this.goalDao = goalDao;
         }
+
         @Override
         protected Void doInBackground(Goal... goals) {
             goalDao.delete(goals[0]);
@@ -74,14 +67,13 @@ public class GoalRepository {
         }
     }
 
-    private static class UpdateGoalAsyncTask extends AsyncTask<Goal , Void , Void>
-    {
+    private static class UpdateGoalAsyncTask extends AsyncTask<Goal, Void, Void> {
         GoalDao goalDao;
 
-        private UpdateGoalAsyncTask(GoalDao goalDao)
-        {
+        private UpdateGoalAsyncTask(GoalDao goalDao) {
             this.goalDao = goalDao;
         }
+
         @Override
         protected Void doInBackground(Goal... goals) {
             goalDao.update(goals[0]);

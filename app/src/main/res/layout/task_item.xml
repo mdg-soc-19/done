@@ -6,47 +6,54 @@
     android:layout_marginTop="8dp"
     android:layout_marginRight="8dp">
 
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <TextView
-            android:id="@+id/goa_name_text_view"
+        <CheckBox
+            android:id="@+id/task_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true" />
+
+
+        <TextView
+            android:id="@+id/task_goal_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/task_check"
+            android:layout_toRightOf="@+id/task_check"
             android:text="Goal Name"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
-            android:id="@+id/deadline_text_view"
+            android:id="@+id/task_motivation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/goa_name_text_view"
+            android:layout_below="@+id/task_goal_name"
+            android:layout_toEndOf="@+id/task_check"
+            android:layout_toRightOf="@+id/task_check"
+            android:paddingLeft="4dp"
             android:paddingTop="8dp"
-            android:text="dd/mm/yy"
+            android:text="Motivation"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <TextView
-            android:id="@+id/priority_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="A"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <ImageView
-            android:id="@+id/goal_status"
+            android:id="@+id/task_status"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/priority_text_view"
+            android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:src="@drawable/pending"
-            android:text="Done" />
+            android:src="@drawable/ic_info_black_24dp"
+            />
+
 
 
     </RelativeLayout>
+
 
 </androidx.cardview.widget.CardView>

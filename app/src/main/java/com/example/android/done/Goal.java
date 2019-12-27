@@ -3,9 +3,11 @@ package com.example.android.done;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
-@Entity (tableName = "goal_table")
+@Entity(tableName = "goal_table")
 public class Goal {
 
     @PrimaryKey(autoGenerate = true)
@@ -23,11 +25,18 @@ public class Goal {
 
     private int minute;
 
-    private ArrayList<String > customizeConverter;
+    private ArrayList<String> customizeConverter;
 
     private String journal;
 
-    public Goal(String goalName, String motivation, String priority, String deadline, int hour, int minute , ArrayList<String > customizeConverter) {
+    private int status = 0;
+
+    private int taskStatus = 0;
+
+    private int doneTask = 0;
+
+
+    public Goal(String goalName, String motivation, String priority, String deadline, int hour, int minute, ArrayList<String> customizeConverter) {
         this.goalName = goalName;
         this.motivation = motivation;
         this.priority = priority;
@@ -35,6 +44,7 @@ public class Goal {
         this.hour = hour;
         this.minute = minute;
         this.customizeConverter = customizeConverter;
+
     }
 
     public int getId() {
@@ -107,5 +117,66 @@ public class Goal {
 
     public void setJournal(String journal) {
         this.journal = journal;
+    }
+
+    public void setStatus1()
+    {
+        String date = deadline;
+        String[] parts = date.split("/");
+        int day = Integer.parseInt(parts[0]);
+        int month = Integer.parseInt(parts[1]);
+        int year = Integer.parseInt(parts[2]);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar c = Calendar.getInstance();
+        String currentDate = sdf.format(c.getTime());
+        String[] cParts = currentDate.split("/");
+
+        int cDay = Integer.parseInt(cParts[0]);
+
+        int cMonth = Integer.parseInt(cParts[1]);
+
+        int cYear = Integer.parseInt(cParts[2]);
+
+        if (year < cYear) {
+            status = 1;
+
+        }
+        if (year == cYear) {
+            if (month + 1 < cMonth) {
+                status = 1;
+
+            }
+            if (month + 1 == cMonth) {
+                if (day < cDay) {
+                    status = 1;
+
+                }
+            }
+        }
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(int taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
+    public int getDoneTask() {
+        return doneTask;
+    }
+
+    public void setDoneTask(int doneTask) {
+        this.doneTask = doneTask;
     }
 }

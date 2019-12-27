@@ -50,9 +50,9 @@
             android:id="@+id/edit_priority"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/Priority"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
+            android:entries="@array/Priority"
             android:prompt="@string/priority_prompt" />
 
 
@@ -64,10 +64,10 @@
             android:textAllCaps="true" />
 
         <CalendarView
+            android:id="@+id/edit_deadline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/edit_deadline"/>
+            android:layout_gravity="center" />
 
 
         <TextView
@@ -157,16 +157,15 @@
         <TimePicker
             android:id="@+id/edit_reminder"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/save_changes_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="SAVE CHANGES"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:text="SAVE CHANGES" />
 
 
     </LinearLayout>

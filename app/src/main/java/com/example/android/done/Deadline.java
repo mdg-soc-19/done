@@ -53,8 +53,7 @@ public class Deadline extends Fragment {
         navController = Navigation.findNavController(view);
 
         calendarView = view.findViewById(R.id.calendar_view);
-        if(!viewModel.getDeadline().trim().isEmpty())
-        {
+        if (!viewModel.getDeadline().trim().isEmpty()) {
             String date = viewModel.getDeadline();
             String[] parts = date.split("/");
 
@@ -68,14 +67,30 @@ public class Deadline extends Fragment {
             calendar.set(Calendar.DAY_OF_MONTH, day);
 
             long milliTime = calendar.getTimeInMillis();
-            calendarView.setDate(milliTime , true , true);
+            calendarView.setDate(milliTime, true, true);
+        }
+        else
+        {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Calendar c = Calendar.getInstance();
+            String currentDate = sdf.format(c.getTime());
+            String[] cParts = currentDate.split("/");
+
+            int cDay = Integer.parseInt(cParts[0]);
+
+            int cMonth = Integer.parseInt(cParts[1]);
+
+            int cYear = Integer.parseInt(cParts[2]);
+            String deadline = cDay + "/" + cMonth + "/" + cYear;
+
+            viewModel.setDeadline(deadline);
         }
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String deadline = dayOfMonth + "/" + month + "/" + year;
                 viewModel.setDeadline(deadline);
-                Toast.makeText(getContext(), "Deadline: " + dayOfMonth + "/" + (month+1) + "/" + year ,  Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Deadline: " + dayOfMonth + "/" + (month + 1) + "/" + year, Toast.LENGTH_SHORT).show();
             }
         });
         Button next = (Button) view.findViewById(R.id.next);
@@ -85,7 +100,6 @@ public class Deadline extends Fragment {
                 navController.navigate(R.id.action_deadline_to_customize);
             }
         });
-
 
 
     }

@@ -14,7 +14,7 @@ import java.util.List;
 public interface GoalDao {
 
     @Insert
-    void insert (Goal goal);
+    void insert(Goal goal);
 
     @Update
     void update(Goal goal);
@@ -24,7 +24,6 @@ public interface GoalDao {
 
     @Query("SELECT * FROM goal_table ORDER BY id ASC")
     LiveData<List<Goal>> getAllGoals();
-
 
 
 }
