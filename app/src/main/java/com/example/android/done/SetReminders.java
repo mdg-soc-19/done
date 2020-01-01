@@ -62,6 +62,9 @@ public class SetReminders extends Fragment {
         reminder = view.findViewById(R.id.reminder_time_picker);
         mViewModel = ViewModelProviders.of(getActivity()).get(GoalViewModel.class);
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
+        Calendar calendar = Calendar.getInstance();
+        viewModel.setHour(calendar.get(Calendar.HOUR_OF_DAY));
+        viewModel.setMinute(calendar.get(Calendar.MINUTE));
         reminder.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
