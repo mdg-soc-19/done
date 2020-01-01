@@ -45,6 +45,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_HomePage_to_MyProgress">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_HomePage_to_goalName">
                               <value>
                                 <LayoutPositions />
@@ -119,6 +124,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="MyProgress">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-51" />
+                            <option name="y" value="734" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

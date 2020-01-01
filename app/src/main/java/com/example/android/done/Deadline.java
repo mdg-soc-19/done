@@ -53,6 +53,7 @@ public class Deadline extends Fragment {
         navController = Navigation.findNavController(view);
 
         calendarView = view.findViewById(R.id.calendar_view);
+        calendarView.setMinDate(System.currentTimeMillis()-1000);
         if (!viewModel.getDeadline().trim().isEmpty()) {
             String date = viewModel.getDeadline();
             String[] parts = date.split("/");
