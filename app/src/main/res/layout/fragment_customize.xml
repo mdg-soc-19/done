@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:background="@drawable/new_form_gradient">
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -14,6 +15,12 @@
         android:orientation="vertical"
         tools:context=".Customize">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Working Days"
+            style="@style/form_headings"
+            app:fontFamily="@font/playfair_display"/>
 
         <TextView
             android:id="@+id/customize"

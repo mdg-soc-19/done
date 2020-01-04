@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/new_form_gradient">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +21,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="Priority"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            style="@style/form_headings"
+            app:fontFamily="@font/playfair_display"/>
 
         <Spinner
             android:id="@+id/spinner1"
@@ -29,7 +32,8 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:entries="@array/Priority"
-            android:prompt="@string/priority_prompt" />
+            android:prompt="@string/priority_prompt"
+            android:popupBackground="@drawable/new_form_gradient"/>
 
         <Button
             android:id="@+id/next"

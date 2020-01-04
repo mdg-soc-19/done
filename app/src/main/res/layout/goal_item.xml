@@ -4,12 +4,14 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp"
-    android:layout_marginRight="8dp">
+    android:layout_marginRight="8dp"
+    >
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@drawable/card_gradient">
 
         <TextView
             android:id="@+id/goa_name_text_view"
