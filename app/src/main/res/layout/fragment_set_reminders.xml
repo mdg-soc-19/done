@@ -39,7 +39,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Save Goal" />
+            android:text="Save Goal"
+            android:background="@drawable/background_transparent"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_check_black_24dp"
+            />
 
 
     </LinearLayout>

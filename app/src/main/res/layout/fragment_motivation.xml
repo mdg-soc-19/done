@@ -40,6 +40,10 @@
         android:layout_height="wrap_content"
         android:text="Next"
         android:id="@+id/next"
+        android:background="@drawable/background_transparent"
+        android:textSize="20sp"
+        android:drawableEnd="@drawable/next"
+        android:drawableRight="@drawable/next"
         />
 
 

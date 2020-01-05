@@ -28,6 +28,7 @@ public class MyGoal extends Fragment {
     private TextView myDeadline;
     private TextView myPriority;
     private TextView myMotivation;
+    private TextView reminderTime;
     MyGoalViewModel myGoalViewModel;
     private Goal goal;
     NavController navController;
@@ -48,6 +49,7 @@ public class MyGoal extends Fragment {
         myPriority = view.findViewById(R.id.my_priority);
         myDeadline = view.findViewById(R.id.my_deadline);
         myMotivation = view.findViewById(R.id.my_motivation);
+        reminderTime = view.findViewById(R.id.my_reminder);
         myGoalViewModel = ViewModelProviders.of(getActivity()).get(MyGoalViewModel.class);
         goal = myGoalViewModel.getMyGoal();
         myGoalName.setText(goal.getGoalName());
@@ -64,6 +66,18 @@ public class MyGoal extends Fragment {
             myDeadline.setText(dealine1);
         }
         myMotivation.setText(goal.getMotivation());
+        int hour = goal.getHour();
+        int minute = goal.getMinute();
+        String time;
+        if (minute!=0)
+        {time = String.valueOf(hour) + ":" + String.valueOf(minute);
+            reminderTime.setText(time);}
+        else
+        {
+            time = String.valueOf(hour) + ":" + String.valueOf(minute)+0;
+            reminderTime.setText(time);
+        }
+
         Button edit = view.findViewById(R.id.edit_button);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
