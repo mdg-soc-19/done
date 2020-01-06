@@ -47,7 +47,8 @@
                     android:text="My Motivation  :  "
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:gravity="right"/>
+                    android:gravity="right"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:id="@+id/my_motivation"
@@ -73,7 +74,8 @@
                     android:text="My Priority  :  "
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:gravity="right" />
+                    android:gravity="right"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:id="@+id/my_priority"
@@ -100,7 +102,8 @@
                     android:text="Deadline  :  "
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:gravity="right"/>
+                    android:gravity="right"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:id="@+id/my_deadline"
@@ -127,7 +130,8 @@
                     android:text="Remind at  :  "
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:gravity="right"/>
+                    android:gravity="right"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:id="@+id/my_reminder"
