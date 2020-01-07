@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="HomePage"
-    android:background="@drawable/new_form_gradient">
+    android:background="#e8f4f8">
 
 
     <TextView

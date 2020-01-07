@@ -12,7 +12,7 @@
     <ScrollView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/new_form_gradient">
+        android:background="#e8f4f8">
 
         <LinearLayout
             android:layout_width="match_parent"
