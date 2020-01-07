@@ -30,7 +30,6 @@
                 android:layout_margin="12dp"
                 android:text="goal name"
                 android:textAllCaps="true"
-                app:fontFamily="@font/playfair_display"
                 android:textSize="30sp"/>
 
             <LinearLayout

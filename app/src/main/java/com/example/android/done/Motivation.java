@@ -1,5 +1,6 @@
 package com.example.android.done;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 public class Motivation extends Fragment {
     NavController navController;
     SharedViewModel viewModel;
+    Dialog helpDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class Motivation extends Fragment {
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         navController = Navigation.findNavController(view);
         Button next = (Button) view.findViewById(R.id.next);
+        Button help = (Button) view.findViewById(R.id.help);
+        helpDialog = new Dialog(getContext());
         final EditText motivation = (EditText) view.findViewById(R.id.motivation_edit_text);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +61,15 @@ public class Motivation extends Fragment {
 
                     navController.navigate(R.id.action_motivation_to_priority2);
                 }
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                helpDialog.setContentView(R.layout.motivation_popup);
+                helpDialog.show();
             }
         });
     }

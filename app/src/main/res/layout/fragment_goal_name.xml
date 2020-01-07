@@ -24,10 +24,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
+                android:layout_margin="20dp"
                 android:text="Goal Name"
                 android:textAllCaps="true"
-                app:fontFamily="@font/playfair_display" />
+                 />
 
 
             <EditText
@@ -37,7 +37,9 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                android:hint="Enter goal name..." />
+                android:hint="Enter goal name..."
+                android:layout_marginBottom="20dp"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"

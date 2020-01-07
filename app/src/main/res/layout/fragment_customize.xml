@@ -20,68 +20,102 @@
             android:layout_height="wrap_content"
             android:text="Working Days"
             style="@style/form_headings"
-            app:fontFamily="@font/playfair_display"/>
+            android:layout_margin="20dp"
+            />
 
         <TextView
             android:id="@+id/customize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Select number of days you want to work every week"
-            android:textAllCaps="true" />
+            android:text="Select number of days you want to work every week."
+            android:textSize="22sp"
+            android:textColor="#000000"/>
 
         <CheckBox
             android:id="@+id/monday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Monday" />
+            android:text="Monday"
+            android:textSize="16dp"
+            />
 
         <CheckBox
             android:id="@+id/tuesday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tuesday" />
+            android:text="Tuesday"
+            android:textSize="16dp"
+            />
 
         <CheckBox
             android:id="@+id/wednesday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wednesday" />
+            android:text="Wednesday"
+            android:textSize="16dp"
+            />
 
         <CheckBox
             android:id="@+id/thursday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thursday" />
+            android:text="Thursday"
+            android:textSize="16dp"
+            />
 
         <CheckBox
             android:id="@+id/friday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Friday" />
+            android:text="Friday"
+            android:textSize="16dp"
+            />
 
         <CheckBox
             android:id="@+id/saturday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Saturday" />
+            android:text="Saturday"
+            android:textSize="16dp"
+            />
 
         <CheckBox
             android:id="@+id/sunday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sunday" />
+            android:text="Sunday"
+            android:textSize="16dp"
+            />
 
 
-        <Button
-            android:id="@+id/custom_next"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Next"
-            android:background="@drawable/background_transparent"
-            android:textSize="20sp"
-            android:drawableEnd="@drawable/next"
-            android:drawableRight="@drawable/next"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/help"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/help"
+                android:text="Help"
+                android:background="@drawable/background_transparent"/>
+
+
+            <Button
+                android:id="@+id/custom_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/next"
+                android:text="Next"
+                android:background="@drawable/background_transparent"/>
+        </LinearLayout>
 
 
     </LinearLayout>

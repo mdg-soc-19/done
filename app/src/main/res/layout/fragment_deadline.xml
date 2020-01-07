@@ -29,23 +29,41 @@
                 android:layout_height="wrap_content"
                 android:text="Deadline"
                 android:textAllCaps="true"
-                app:fontFamily="@font/playfair_display"
-                style="@style/form_headings"/>
+                style="@style/form_headings"
+                android:layout_margin="20dp"/>
 
             <CalendarView
                 android:id="@+id/calendar_view"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/next"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Next"
-                android:background="@drawable/background_transparent"
-                android:textSize="20sp"
-                android:drawableEnd="@drawable/next"
-                android:drawableRight="@drawable/next"/>
+                android:layout_marginBottom="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/help"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/help"
+                    android:text="Help"
+                    android:background="@drawable/background_transparent"/>
+
+
+                <Button
+                    android:id="@+id/next"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/next"
+                    android:text="Next"
+                    android:background="@drawable/background_transparent"/>
+            </LinearLayout>
 
 
         </LinearLayout>

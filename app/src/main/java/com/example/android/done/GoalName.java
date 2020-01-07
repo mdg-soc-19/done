@@ -1,5 +1,6 @@
 package com.example.android.done;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class GoalName extends Fragment {
 
     NavController navController;
     SharedViewModel viewModel;
+    Dialog helpDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class GoalName extends Fragment {
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         navController = Navigation.findNavController(view);
         Button next = (Button) view.findViewById(R.id.next);
+        Button help = (Button) view.findViewById(R.id.help);
+        helpDialog = new Dialog(getContext());
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +67,15 @@ public class GoalName extends Fragment {
 
 
                 }
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                helpDialog.setContentView(R.layout.goal_name_popup);
+                helpDialog.show();
             }
         });
     }

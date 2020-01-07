@@ -1,6 +1,7 @@
 package com.example.android.done;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,7 @@ public class Customize extends Fragment {
     private CheckBox sunday;
     private ArrayList<String> inputdays = new ArrayList<>();
     Button next;
+    Dialog helpDialog;
 
 
     @Override
@@ -57,6 +59,8 @@ public class Customize extends Fragment {
         sunday = view.findViewById(R.id.sunday);
         navController = Navigation.findNavController(view);
         next = view.findViewById(R.id.custom_next);
+        Button help = (Button) view.findViewById(R.id.help);
+        helpDialog = new Dialog(getContext());
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
 
 
@@ -107,6 +111,15 @@ public class Customize extends Fragment {
                     Toast.makeText(getContext(), "Please select at least one day", Toast.LENGTH_SHORT).show();
 
                 }
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                helpDialog.setContentView(R.layout.custom_days_popup);
+                helpDialog.show();
             }
         });
     }

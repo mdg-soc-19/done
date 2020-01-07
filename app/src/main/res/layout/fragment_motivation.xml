@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e8f4f8">
+    android:background="#e8f4f8"
+    android:fillViewport="true">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -20,10 +21,9 @@
         android:id="@+id/motivation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="20dp"
         android:text="Motivation"
         android:textAllCaps="true"
-        app:fontFamily="@font/playfair_display"
         style="@style/form_headings"/>
 
     <EditText
@@ -33,18 +33,35 @@
         android:layout_marginRight="32dp"
         android:id="@+id/motivation_edit_text"
         android:hint="Enter motivation..."
+        android:layout_marginBottom="20dp"
         />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:id="@+id/next"
-        android:background="@drawable/background_transparent"
-        android:textSize="20sp"
-        android:drawableEnd="@drawable/next"
-        android:drawableRight="@drawable/next"
-        />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/help"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/help"
+            android:text="Help"
+            android:background="@drawable/background_transparent"/>
+
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/next"
+            android:text="Next"
+            android:background="@drawable/background_transparent"/>
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -16,7 +16,7 @@
         android:textColor="#424242"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:fontFamily="@font/playfair_display"/>
+        />
 
 
     <androidx.recyclerview.widget.RecyclerView

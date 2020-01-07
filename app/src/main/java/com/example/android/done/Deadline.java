@@ -1,5 +1,6 @@
 package com.example.android.done;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class Deadline extends Fragment {
     NavController navController;
     CalendarView calendarView;
     SharedViewModel viewModel;
+    Dialog helpDialog;
 
 
     @Override
@@ -53,7 +55,7 @@ public class Deadline extends Fragment {
         navController = Navigation.findNavController(view);
 
         calendarView = view.findViewById(R.id.calendar_view);
-        calendarView.setMinDate(System.currentTimeMillis()-1000);
+        calendarView.setMinDate(System.currentTimeMillis() - 1000);
         if (!viewModel.getDeadline().trim().isEmpty()) {
             String date = viewModel.getDeadline();
             String[] parts = date.split("/");
@@ -69,9 +71,7 @@ public class Deadline extends Fragment {
 
             long milliTime = calendar.getTimeInMillis();
             calendarView.setDate(milliTime, true, true);
-        }
-        else
-        {
+        } else {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Calendar c = Calendar.getInstance();
             String currentDate = sdf.format(c.getTime());
@@ -102,7 +102,17 @@ public class Deadline extends Fragment {
             }
         });
 
+        Button help = (Button) view.findViewById(R.id.help);
+        helpDialog = new Dialog(getContext());
 
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                helpDialog.setContentView(R.layout.deadline_popup);
+                helpDialog.show();
+            }
+        });
     }
 
 

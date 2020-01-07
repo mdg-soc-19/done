@@ -20,7 +20,8 @@
         app:menu="@menu/bottom_nav_menu"
         android:background="#009688"
         app:itemIconTint="@drawable/bottom_navigation_selector"
-        app:itemTextColor="@drawable/bottom_navigation_selector"/>
+        app:itemTextColor="@drawable/bottom_navigation_selector"
+        app:labelVisibilityMode="labeled"/>
 
     <fragment
         android:id="@+id/nav_host_fragment"
