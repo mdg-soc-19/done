@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -79,13 +80,18 @@ public class MyProgress extends Fragment {
         pieChart.setExtraOffsets(5,10,5,10);
         pieChart.setNoDataText("No goal available");
         pieChart.setNoDataTextColor(Color.BLACK);
+        Legend l = pieChart.getLegend();
+        l.setTextSize(20f);
+        l.setTextColor(Color.BLACK);
+        l.setForm(Legend.LegendForm.CIRCLE);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
         List<PieEntry> entries = new ArrayList<>();
         entries.add(new PieEntry(doneGoals, "Done Goals"));
         entries.add(new PieEntry(unDoneGoals, "Undone Goals"));
         PieDataSet set = new PieDataSet(entries, "");
         set.setSliceSpace(3f);
         set.setSelectionShift(5f);
-        set.setColors(Color.rgb(0,153,0) , Color.rgb(255,0,0));
+        set.setColors(Color.rgb(0,153,0) , Color.rgb(184,15 ,10));
         PieData data = new PieData(set);
         data.setValueTextSize(15f);
         pieChart.setData(data);
