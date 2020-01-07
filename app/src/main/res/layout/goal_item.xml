@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Goal Name"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
@@ -37,16 +38,32 @@
             android:layout_alignParentRight="true"
             android:text="A"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/priority_text_view"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status : "
+                android:layout_gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <ImageView
             android:id="@+id/goal_status"
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_below="@id/priority_text_view"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:text="Status : "
             android:src="@drawable/pending"
-            android:text="Done" />
+            android:background="@drawable/background_transparent"
+            />
+
+        </LinearLayout>
 
 
     </RelativeLayout>

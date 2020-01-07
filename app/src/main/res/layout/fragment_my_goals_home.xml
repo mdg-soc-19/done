@@ -13,9 +13,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:text="My Goals"
-        android:textColor="#424242"
-        android:textSize="32sp"
-        android:textStyle="bold"
+        style="@style/form_headings"
         />
 
 

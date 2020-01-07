@@ -63,7 +63,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder> {
         currentGoal.setStatus1();
         if (currentGoal.getStatus()==1)
         {
-            holder.imageViewStatus.setImageResource(R.drawable.done);
+            holder.imageViewStatus.setImageResource(R.drawable.ic_check_black_24dp);
         }
         holder.textViewPriority.setText(currentGoal.getPriority());
 

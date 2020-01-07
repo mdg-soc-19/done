@@ -9,43 +9,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".EditGoal">
+        tools:context=".EditGoal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:text="Goal name"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/edit_goal_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Input goal name" />
+            android:text="Input goal name"
+            android:layout_marginBottom="8dp"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:text="Motivation"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/edit_motivation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Input motivation" />
+            android:text="Input motivation"
+            android:layout_marginBottom="8dp"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:text="Priority"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
 
         <Spinner
             android:id="@+id/edit_priority"
@@ -54,29 +64,35 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:entries="@array/Priority"
-            android:prompt="@string/priority_prompt" />
+            android:prompt="@string/priority_prompt"
+            android:layout_marginBottom="8dp"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:text="Deadline"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
 
         <CalendarView
             android:id="@+id/edit_deadline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:text="Working Days"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -151,9 +167,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:text="REMINDER"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp"/>
 
         <TimePicker
             android:id="@+id/edit_reminder"
