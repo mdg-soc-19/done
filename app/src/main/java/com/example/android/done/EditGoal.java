@@ -94,6 +94,7 @@ public class EditGoal extends Fragment {
         }
         editPriority.setSelection(selection);
         editDeadline = view.findViewById(R.id.edit_deadline);
+        editDeadline.setMinDate(System.currentTimeMillis() - 1000);
         sharedViewModel.setDeadline(myGoal.getDeadline());
         if (!myGoal.getDeadline().trim().isEmpty()) {
 
@@ -232,6 +233,7 @@ public class EditGoal extends Fragment {
                 int inputMinute = sharedViewModel.getMinute();
 
                 Goal updatedGoal = new Goal(inputGoalName, inputMotivation, inputPriority, inputDeadline, inputHour, inputMinute, inputDays);
+                updatedGoal.setTaskStatus(myGoal.getTaskStatus());
                 updatedGoal.setDoneTask(myGoal.getDoneTask());
                 updatedGoal.setId(myGoal.getId());
                 mViewModel.update(updatedGoal);
