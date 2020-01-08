@@ -37,6 +37,24 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
         goalViewModel = ViewModelProviders.of(this).get(GoalViewModel.class);
+        ArrayList<Goal> allGoals = new ArrayList<>();
+        goalViewModel.getAllGoals().observe(this, new Observer<List<Goal>>() {
+            @Override
+            public void onChanged(List<Goal> goals) {
+                allGoals.addAll(goals);
+                Log.e("This happened" ,"yes");
+                reset(allGoals);
+
+            }
+        });
+
+
+
+
+    }
+
+    private void reset(ArrayList<Goal> allGoals)
+    {
         Calendar calendar = Calendar.getInstance();
         int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
         SharedPreferences settings = getSharedPreferences("PREFS" , 0);
@@ -47,26 +65,19 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = settings.edit();
             editor.putInt("day" , currentDay);
             editor.commit();
+            for (int i = 0 ; i< allGoals.size();i++)
+            {
+                Goal goal = allGoals.get(i);
+                goal.setTaskStatus(0);
+                goalViewModel.update(goal);
+                Log.e("Goal task status"+String.valueOf(i) , String.valueOf(goal.getTaskStatus()));
+            }
 
-            goalViewModel.getAllGoals().observe(this, new Observer<List<Goal>>() {
-                @Override
-                public void onChanged(List<Goal> goals) {
-                    for (int i =0; i<goals.size();i++){
-                        Goal goal = goals.get(i);
-                        goal.setTaskStatus(0);
-                        goalViewModel.update(goal);
-                    }
-
-
-                }
-            });
 
 
         }
-
-
-
     }
+
 
 
 }
