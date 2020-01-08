@@ -43,6 +43,10 @@ In the world around where food is love, losing weight is one of the top resoluti
         You can select the days you want to work in a week. It totally depends upon your goal , its urgency and amount of time required. On these selected days you will be reminded about your goal so that you remain consistent.
     </string>
 
+    <string name="congratulationText">
+        Congratulations for completing your task today. All the best for your next working day.
+    </string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

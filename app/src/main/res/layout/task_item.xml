@@ -28,7 +28,8 @@
             android:layout_toEndOf="@+id/task_check"
             android:layout_toRightOf="@+id/task_check"
             android:text="Goal Name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/task_motivation"
@@ -49,8 +50,17 @@
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:src="@drawable/ic_info_black_24dp"
+            android:src="@drawable/ic_lightbulb_outline_black_24dp"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/task_status"
+            android:text="More Info"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
 
 

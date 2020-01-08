@@ -55,10 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         Goal goal = goals.get(i);
                         goal.setTaskStatus(0);
                         goalViewModel.update(goal);
-
                     }
-
-
 
 
                 }

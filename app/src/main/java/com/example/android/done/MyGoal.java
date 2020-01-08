@@ -30,6 +30,7 @@ public class MyGoal extends Fragment {
     private TextView myMotivation;
     private TextView reminderTime;
     private TextView myStatus;
+    private TextView workedDays;
     MyGoalViewModel myGoalViewModel;
     private Goal goal;
     NavController navController;
@@ -52,6 +53,7 @@ public class MyGoal extends Fragment {
         myMotivation = view.findViewById(R.id.my_motivation);
         reminderTime = view.findViewById(R.id.my_reminder);
         myStatus = view.findViewById(R.id.my_status);
+        workedDays = view.findViewById(R.id.my_work_days);
         myGoalViewModel = ViewModelProviders.of(getActivity()).get(MyGoalViewModel.class);
         goal = myGoalViewModel.getMyGoal();
         myGoalName.setText(goal.getGoalName());
@@ -83,6 +85,7 @@ public class MyGoal extends Fragment {
         {
             myStatus.setText("Done");
         }
+        workedDays.setText(String.valueOf(goal.getDoneTask()));
 
         Button edit = view.findViewById(R.id.edit_button);
         edit.setOnClickListener(new View.OnClickListener() {

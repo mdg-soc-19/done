@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:text="My Journal"
         style="@style/form_headings"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:layout_gravity="center_horizontal"
+        />
 
 
     <EditText
