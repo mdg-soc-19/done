@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#e8f4f8">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,15 +18,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="20dp"
             android:text="Reminder"
-            android:textAllCaps="true" />
+            style="@style/form_headings"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="At what time should we remind you about the task? " />
+            android:text="At what time should we remind you about the task? "
+            android:textSize="22sp"
+            android:textColor="#000000"/>
 
         <TimePicker
             android:id="@+id/reminder_time_picker"
@@ -37,7 +41,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Save Goal" />
+            android:text="Save Goal"
+            android:background="@drawable/background_transparent"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_check_black_24dp"
+            />
 
 
     </LinearLayout>

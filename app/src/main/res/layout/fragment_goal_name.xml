@@ -3,38 +3,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:context=".GoalName">
+    android:layout_height="match_parent"
+    android:background="#e8f4f8"
+    android:fillViewport="true">
 
 
-        <TextView
-            android:id="@+id/goal_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Goal Name"
-            android:textAllCaps="true" />
 
-        <EditText
-            android:id="@+id/goal_name_edit_text"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp" />
-
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".GoalName">
 
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/goal_name"
+                style="@style/form_headings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:text="Goal Name"
+                android:textAllCaps="true"
+                 />
+
+
+            <EditText
+                android:id="@+id/goal_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:hint="Enter goal name..."
+                android:layout_marginBottom="20dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/help"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/help"
+                    android:text="Help"
+                    android:background="@drawable/background_transparent"/>
+
+
+                <Button
+                    android:id="@+id/next"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/next"
+                    android:text="Next"
+                    android:background="@drawable/background_transparent"/>
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
 </ScrollView>

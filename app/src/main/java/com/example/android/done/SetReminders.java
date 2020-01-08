@@ -108,6 +108,7 @@ public class SetReminders extends Fragment {
                 Goal goal = new Goal(inputGoalName, inputMotivation, inputPriority, inputDeadline, inputHour, inputMinute, inputDays);
                 mViewModel.insert(goal);
                 clearFields();
+                Toast.makeText(getContext(), "Goal saved successfully", Toast.LENGTH_SHORT).show();
                 navController.navigate(R.id.action_SetReminders_to_MyGoalsHome);
 
 

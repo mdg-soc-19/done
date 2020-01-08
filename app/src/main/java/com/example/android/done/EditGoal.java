@@ -58,7 +58,7 @@ public class EditGoal extends Fragment {
         View v = inflater.inflate(R.layout.fragment_edit_goal, container, false);
 
         String[] values =
-                {"A", "B", "C", "D"};
+                {"Very Important", "Important", "Medium", "Basic"};
         Spinner spinner = (Spinner) v.findViewById(R.id.edit_priority);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, values);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
@@ -83,11 +83,11 @@ public class EditGoal extends Fragment {
         editMotivation.setText(myGoal.getMotivation());
         editPriority = view.findViewById(R.id.edit_priority);
         int selection;
-        if (myGoal.getPriority().equals("B")) {
+        if (myGoal.getPriority().equals("Important")) {
             selection = 1;
-        } else if (myGoal.getPriority().equals("C")) {
+        } else if (myGoal.getPriority().equals("Medium")) {
             selection = 2;
-        } else if (myGoal.getPriority().equals("D")) {
+        } else if (myGoal.getPriority().equals("Basic")) {
             selection = 3;
         } else {
             selection = 0;

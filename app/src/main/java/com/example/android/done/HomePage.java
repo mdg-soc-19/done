@@ -1,6 +1,7 @@
 package com.example.android.done;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.Uri;
@@ -36,6 +37,7 @@ public class HomePage extends Fragment implements TaskAdapter.OnTaskListener {
     private TaskAdapter adapter;
     private GoalViewModel mViewModel;
     private RecyclerView recyclerView;
+    private Dialog helpDialog;
 
 
     @Override
@@ -123,6 +125,11 @@ public class HomePage extends Fragment implements TaskAdapter.OnTaskListener {
             goalTaskSelected.setTaskStatus(1); //task marked as done
             goalTaskSelected.setDoneTask(goalTaskSelected.getDoneTask()+1);  //task for the specific goal ++
             mViewModel.update(goalTaskSelected);
+            helpDialog = new Dialog(getContext());
+            helpDialog.setContentView(R.layout.congratulatory_dialog);
+            helpDialog.show();
+
+
         }
         if (!isChecked)
         {
@@ -136,7 +143,7 @@ public class HomePage extends Fragment implements TaskAdapter.OnTaskListener {
         AlertDialog confirmationDialogBox = new AlertDialog.Builder(getActivity())
                 // set message, title, and icon
                 .setTitle("Goal Information")
-                .setMessage("Go to MyGoals page")
+                .setMessage("Go to My Goals page")
 
 
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
