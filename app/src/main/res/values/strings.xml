@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Done</string>
+    <string name="priority_prompt">Choose priority level</string>
+    <string name="frequency_prompt">Choose frequency of days</string>
+
+    <string-array name="Priority">
+        <item>"Very Important"</item>
+        <item>"Important"</item>
+        //These priorities shall be changed to something innovative
+        <item>"Medium"</item>
+        //Like important, casual etc.
+        <item>"Basic"</item>
+    </string-array>
+
+
+
+
+    <string name="motivationText">
+        To make sure that your goal motivates you , write down why it\'s valuable and important to you.
+        Ask yourself, \"If I were to share my goal with others, what would I tell them to convince them it was a worthwhile goal?\"
+        You can use this motivating value statement to help you if you start to doubt yourself or lose confidence in your ability to actually make the goal happen.
+
+    </string>
+
+    <string name="goal1Text">
+In the world around where food is love, losing weight is one of the top resolutions one requires. For the same general motivation is sure to look admirable and to gain confidence. So you can easily set your daily routine, at what time you need to exercise, or when you should have your proper diet. Such can be easily done through setting reminders for the same and also tracking your progress by looking at the long road you are off too through personal journaling.
+    </string>
+
+    <string name="goal2Text">
+        This is yet another habit that people of all ages try to instill within themselves.So why not set it as a goal in this app . The app will remind on the days you fill in to have some quality reading time and you can journal about it anytime and see your reading habit being formed.
+    </string>
+
+
+    <string name="priorityText">
+        Doing so helps you to maintain a clear focus on reaching the most important goals first and taking the steps to ensure that you do. Setting priorities also helps you to avoid becoming overwhelmed if you have multiple goals you are trying to reach.
+    </string>
+
+    <string name="deadlineText">
+        A deadline can motivate action. By knowing you need to accomplish something in a particular period of time, you’re less likely to procrastinate on it. Make sure the deadline is reasonable, which means, well worked out, using all the available evidence. Create realistic deadlines by thinking through all the steps and challenges involved.
+    </string>
+
+    <string name="customizeText">
+        You can select the days you want to work in a week. It totally depends upon your goal , its urgency and amount of time required. On these selected days you will be reminded about your goal so that you remain consistent.
+    </string>
+
+    <string name="congratulationText">
+        Congratulations for completing your task today. All the best for your next working day.
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

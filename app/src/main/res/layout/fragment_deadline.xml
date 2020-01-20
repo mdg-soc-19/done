@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.android.done.viewmodels.DateViewModel" />
+    </data>
+
+    <ScrollView xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e8f4f8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".Deadline"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deadline"
+                android:textAllCaps="true"
+                style="@style/form_headings"
+                android:layout_margin="20dp"/>
+
+            <CalendarView
+                android:id="@+id/calendar_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/help"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/help"
+                    android:text="Help"
+                    android:background="@drawable/background_transparent"/>
+
+
+                <Button
+                    android:id="@+id/next"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/next"
+                    android:text="Next"
+                    android:background="@drawable/background_transparent"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

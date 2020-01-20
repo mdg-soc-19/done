@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@+id/HomePage">
+
+    <fragment
+        android:id="@+id/HomePage"
+        android:name="com.example.android.done.HomePage"
+        android:label="fragment_HomePage"
+        tools:layout="@layout/fragment_home_page">
+
+        <action
+            android:id="@+id/action_HomePage_to_goalName"
+            app:destination="@id/goalName" />
+        <action
+            android:id="@+id/action_HomePage_to_MyGoalsHome"
+            app:destination="@id/MyGoalsHome" />
+        <action
+            android:id="@+id/action_HomePage_to_MyProgress"
+            app:destination="@id/MyProgress" />
+    </fragment>
+    <fragment
+        android:id="@+id/goalName"
+        android:name="com.example.android.done.GoalName"
+        android:label="fragment_goal_name"
+        tools:layout="@layout/fragment_goal_name" >
+        <action
+            android:id="@+id/action_goalName_to_motivation"
+            app:destination="@id/motivation" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/motivation"
+        android:name="com.example.android.done.Motivation"
+        android:label="fragment_motivation"
+        tools:layout="@layout/fragment_motivation">
+
+        <action
+            android:id="@+id/action_motivation_to_priority2"
+            app:destination="@id/priority" />
+    </fragment>
+    <fragment
+        android:id="@+id/priority"
+        android:name="com.example.android.done.Priority"
+        android:label="fragment_priority"
+        tools:layout="@layout/fragment_priority">
+        <action
+            android:id="@+id/action_priority_to_deadline2"
+            app:destination="@id/deadline" />
+    </fragment>
+    <fragment
+        android:id="@+id/deadline"
+        android:name="com.example.android.done.Deadline"
+        android:label="fragment_deadline"
+        tools:layout="@layout/fragment_deadline" >
+        <action
+            android:id="@+id/action_deadline_to_customize"
+            app:destination="@id/customize" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customize"
+        android:name="com.example.android.done.Customize"
+        android:label="fragment_customize"
+        tools:layout="@layout/fragment_customize" >
+        <action
+            android:id="@+id/action_customize_to_SetReminders"
+            app:destination="@id/SetReminders" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SetReminders"
+        android:name="com.example.android.done.SetReminders"
+        android:label="fragment_set_reminders"
+        tools:layout="@layout/fragment_set_reminders" >
+        <action
+            android:id="@+id/action_SetReminders_to_MyGoalsHome"
+            app:destination="@id/MyGoalsHome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyGoalsHome"
+        android:name="com.example.android.done.MyGoalsHome"
+        android:label="fragment_my_goals_home"
+        tools:layout="@layout/fragment_my_goals_home" >
+        <action
+            android:id="@+id/action_MyGoalsHome_to_MyGoal"
+            app:destination="@id/MyGoal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyGoal"
+        android:name="com.example.android.done.MyGoal"
+        android:label="fragment_my_goal"
+        tools:layout="@layout/fragment_my_goal" >
+        <action
+            android:id="@+id/action_MyGoal_to_EditGoal"
+            app:destination="@id/EditGoal" />
+        <action
+            android:id="@+id/action_MyGoal_to_MyJournal"
+            app:destination="@id/MyJournal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/EditGoal"
+        android:name="com.example.android.done.EditGoal"
+        android:label="fragment_edit_goal"
+        tools:layout="@layout/fragment_edit_goal" >
+        <action
+            android:id="@+id/action_EditGoal_to_MyGoal"
+            app:destination="@id/MyGoal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyJournal"
+        android:name="com.example.android.done.MyJournal"
+        android:label="fragment_my_journal"
+        tools:layout="@layout/fragment_my_journal" >
+        <action
+            android:id="@+id/action_MyJournal_to_MyGoal"
+            app:destination="@id/MyGoal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyProgress"
+        android:name="com.example.android.done.MyProgress"
+        android:label="fragment_my_progress"
+        tools:layout="@layout/fragment_my_progress" >
+    </fragment>
+
+
+</navigation>

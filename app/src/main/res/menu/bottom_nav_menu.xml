@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/HomePage"
+        android:icon="@drawable/home_page"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/goalName"
+        android:icon="@drawable/new_goal"
+        android:title="New Goal" />
+    <item
+        android:id="@+id/MyGoalsHome"
+        android:icon="@drawable/my_goals"
+        android:title="My Goals" />
+
+    <item
+        android:id="@+id/MyProgress"
+        android:icon="@drawable/stats"
+        android:title="My Progress" />
+</menu>

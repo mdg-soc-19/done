@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="#83d0c9">
+
+        <TextView
+            android:id="@+id/goa_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goal Name"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/deadline_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goa_name_text_view"
+            android:paddingTop="8dp"
+            android:text="dd/mm/yy"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/priority_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="A"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/priority_text_view"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status : "
+                android:layout_gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <ImageView
+            android:id="@+id/goal_status"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Status : "
+            android:src="@drawable/pending"
+            android:background="@drawable/background_transparent"
+            />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

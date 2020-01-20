@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyJournal"
+    android:background="#e8f4f8">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Journal"
+        style="@style/form_headings"
+        android:padding="16dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+    <EditText
+        android:id="@+id/journal_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:gravity="top"
+        android:hint="Type here" />
+
+    <Button
+        android:id="@+id/save_journal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Save"
+        android:drawableLeft="@drawable/ic_check_black_24dp"
+        android:background="@drawable/background_transparent"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"/>
+
+
+</LinearLayout>
